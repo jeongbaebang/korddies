@@ -25,7 +25,7 @@ const config = {
       );
 
       if (
-        process.env.STORYBOOK_ENABLED !== 'true' &&
+        process.env.STORYBOOK !== 'true' &&
         defaultResolveResult?.filePath?.includes?.('./.storybook')
       ) {
         return {

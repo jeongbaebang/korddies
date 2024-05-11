@@ -1,17 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import { NODE_ENV, STORYBOOK } from '@env';
 
 const App = () => {
-  return (
-    <View>
-      <Text>App</Text>
-    </View>
-  );
+  return <View />;
 };
 
 let AppEntryPoint = App;
 
-if (true) {
+if (NODE_ENV !== 'production' && STORYBOOK === 'true') {
   AppEntryPoint = require('../.storybook').default;
 }
 
