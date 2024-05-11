@@ -1,0 +1,52 @@
+name: React Native Code Validation
+run-name: '${{ github.actor }}님이 GitHub Actions를 통해 검증 작업을 수행 중입니다 🚀'
+
+on: [pull_request]
+
+jobs:
+  validation:
+    name: Code Quality and Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Corepack 활성화
+      - name: Enable Corepack
+        run: corepack enable
+
+      # Yarn 버전 설정
+      - name: Use specific Yarn version
+        run: yarn set version stable
+
+      # Yarn 버전 확인 (선택적)
+      - name: Check Yarn Version
+        run: yarn --version
+
+      # 캐시 설정
+      - name: Cache Yarn dependencies
+        uses: actions/cache@v4.0.2
+        with:
+          path: |
+            .yarn/cache
+            .yarn/unplugged
+            .yarn/build-state.yml
+            .yarn/install-state.gz
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Run Unit Tests with Jest
+        run: yarn run test
+
+      - name: ESLint Check
+        run: yarn run lint:check
+
+      - name: Prettier Format Check
+        run: yarn run prettier:check
