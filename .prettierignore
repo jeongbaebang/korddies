@@ -1,0 +1,6 @@
+.bundle
+.storybook/storybook.requires.ts
+android
+ios
+node_modules
+vendor
