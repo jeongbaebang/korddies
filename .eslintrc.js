@@ -4,7 +4,7 @@
 module.exports = {
   root: true,
 
-  ignorePatterns: ['jest.*.js', 'coverage'],
+  ignorePatterns: ['coverage'],
   plugins: ['prettier', 'react', 'react-native'],
   extends: [
     '@react-native',
@@ -31,6 +31,10 @@ module.exports = {
         'react-native/no-inline-styles': 'off',
         'react/react-in-jsx-scope': 'off',
       },
+    },
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      extends: ['plugin:testing-library/react'],
     },
   ],
 };
