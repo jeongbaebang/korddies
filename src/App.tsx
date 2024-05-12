@@ -1,9 +1,9 @@
 import React from 'react';
-import { View } from 'react-native';
 import { NODE_ENV, STORYBOOK } from '@env';
+import MainNavigation from './navigation/MainNavigation';
 
 const App = () => {
-  return <View />;
+  return <MainNavigation />;
 };
 
 let AppEntryPoint = App;
