@@ -1,5 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { sizeConverter } from '../constants/designSystem';
 
 export type MyButtonProps = {
   onPress: () => void;
@@ -25,12 +26,12 @@ const color = {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  container: sizeConverter({
     backgroundColor: color.container.background,
     borderRadius: 8,
     paddingHorizontal: 16,
     paddingVertical: 8,
-  },
+  }),
   text: {
     color: color.font,
   },

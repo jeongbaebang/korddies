@@ -75,3 +75,6 @@ yarn-error.log
 
 .env.*
 !.env.template
+
+# wiki
+/korddies.wiki
