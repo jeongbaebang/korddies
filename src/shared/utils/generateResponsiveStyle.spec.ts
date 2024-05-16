@@ -2,6 +2,7 @@ import { PixelRatio } from 'react-native';
 import {
   responsiveStyleAdapter,
   generateResponsiveStyle,
+  styleCalculatorCore,
 } from './generateResponsiveStyle';
 
 // 테스트에 사용할 기기의 너비
@@ -19,6 +20,50 @@ const testCore = (size: number) => {
     ),
   );
 };
+
+describe('styleCalculator Function', () => {
+  test('기준너비보다 큰 디바이스는 큰 크기로 계산되어야 한다.', () => {
+    const deviceWidth = 400;
+    const referenceWidth = 393;
+
+    const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
+    const exptedSizes = [10, 51, 102, 204, 306, 407, 1018];
+
+    targetSizes.forEach((size, index) => {
+      expect(styleCalculatorCore(size, deviceWidth, referenceWidth)).toBe(
+        exptedSizes[index],
+      );
+    });
+  });
+
+  test('기준너비보다 작은 디바이스는 작은 크기로 계산되어야 한다.', () => {
+    const deviceWidth = 280;
+    const referenceWidth = 393;
+
+    const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
+    const exptedSizes = [7, 36, 71, 143, 214, 285, 713];
+
+    targetSizes.forEach((size, index) => {
+      expect(styleCalculatorCore(size, deviceWidth, referenceWidth)).toBe(
+        exptedSizes[index],
+      );
+    });
+  });
+
+  test('기준너비와 동일한 디바이스는 동일한 크기값을 반환해야 한다.', () => {
+    const deviceWidth = 393;
+    const referenceWidth = 393;
+
+    const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
+    const exptedSizes = [10, 50, 100, 200, 300, 400, 1000];
+
+    targetSizes.forEach((size, index) => {
+      expect(styleCalculatorCore(size, deviceWidth, referenceWidth)).toBe(
+        exptedSizes[index],
+      );
+    });
+  });
+});
 
 describe('generateResponsiveStyle Function', () => {
   let relativeSizeConverter: (size: number) => number;

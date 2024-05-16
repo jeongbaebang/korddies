@@ -64,4 +64,8 @@ const defaultComputeCore: ComputeCoreFn = (
   );
 };
 
-export { generateResponsiveStyle, responsiveStyleAdapter };
+export {
+  generateResponsiveStyle,
+  responsiveStyleAdapter,
+  defaultComputeCore as styleCalculatorCore,
+};
