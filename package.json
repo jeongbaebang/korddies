@@ -10,6 +10,7 @@
     "lint:fix": "eslint . --fix",
     "prettier:check": "prettier --check .",
     "prettier:format": "prettier --write .",
+    "start:clean": "NODE_ENV=development npx react-native start --resetCache",
     "start:development": "NODE_ENV=development npx react-native start",
     "start:production": "NODE_ENV=production npx react-native start",
     "test": "jest",
@@ -19,6 +20,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.5.20",
     "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.26",
     "ramda": "^0.30.0",
