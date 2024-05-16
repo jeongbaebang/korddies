@@ -1,3 +1,6 @@
+const ERROR_MESSAGE =
+  'Invalid cache key: The requested key is not present in the cache.';
+
 /**
  * @see https://github.com/jeongbaebang/korddies/wiki/Docs#cache
  */
@@ -12,7 +15,7 @@ class Cache<K, V> {
     const cachedValue = this.cache.get(key);
 
     if (cachedValue === undefined) {
-      throw new ReferenceError('Invalid cachedValue');
+      throw new ReferenceError(ERROR_MESSAGE);
     }
 
     return cachedValue;
