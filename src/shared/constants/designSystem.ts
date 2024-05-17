@@ -6,10 +6,13 @@ import {
 } from '@shared/utils/generateResponsiveStyle';
 
 const currentDeviceWidth = Dimensions.get('window').width;
+
 const referenceDeviceWidth = 393; // iPhone 15
-const sizeConverter = responsiveStyleAdapter(
-  generateResponsiveStyle(currentDeviceWidth, referenceDeviceWidth),
+const sizeConverter = generateResponsiveStyle(
+  currentDeviceWidth,
+  referenceDeviceWidth,
 );
+const converteToResponsiveStyle = responsiveStyleAdapter(sizeConverter);
 
 const theme = {
   color: {
@@ -31,4 +34,4 @@ const theme = {
   },
 } as const;
 
-export { sizeConverter, theme };
+export { sizeConverter, converteToResponsiveStyle, theme };
