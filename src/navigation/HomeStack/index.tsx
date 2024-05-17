@@ -1,9 +1,9 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-import { ScreenNames } from '../screenNames';
 import type { NativeStackNavigationOptions } from '@react-navigation/native-stack';
-import GroupMeetingScreen from '../../modules/groupMeeting/screens/GroupMeetingScreen';
+
+import { ScreenNames } from '@navigation/screenNames';
+import GroupMeetingScreen from '@modules/groupMeeting/screens/GroupMeetingScreen';
 
 export type NativeStackParamList = {
   [ScreenNames.GROUP_MEETING]: undefined;

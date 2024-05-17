@@ -2,11 +2,11 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import type { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
-import HomeStack from '../HomeStack';
-import { ScreenNames } from '../screenNames';
-import MomentsScreen from '../../modules/moments/screens/MomentsScreen';
-import ChatScreen from '../../modules/chat/screens/ChatScreen';
-import ProfileScreen from '../../modules/profile/screens/ProfileScreen';
+import { ScreenNames } from '@navigation/screenNames';
+import HomeStack from '@navigation/HomeStack';
+import MomentsScreen from '@modules/moments/screens/MomentsScreen';
+import ChatScreen from '@modules/chat/screens/ChatScreen';
+import ProfileScreen from '@modules/profile/screens/ProfileScreen';
 
 type BottomTabParamList = {
   [ScreenNames.HOME]: undefined;

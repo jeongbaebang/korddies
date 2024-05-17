@@ -1,8 +1,9 @@
 import { Dimensions } from 'react-native';
+
 import {
-  responsiveStyleAdapter,
   generateResponsiveStyle,
-} from '../utils/generateResponsiveStyle';
+  responsiveStyleAdapter,
+} from '@shared/utils/generateResponsiveStyle';
 
 const currentDeviceWidth = Dimensions.get('window').width;
 const referenceDeviceWidth = 393; // iPhone 15
