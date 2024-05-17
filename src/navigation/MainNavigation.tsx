@@ -1,24 +1,32 @@
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Text, View } from 'react-native';
+import type { NativeStackNavigationOptions } from '@react-navigation/native-stack';
 
-const Stack = createNativeStackNavigator();
+import { ScreenNames } from '@navigation/screenNames';
+import BottomTabs from '@navigation/BottomTabs';
 
-const HomeScreen = () => {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Test Screen</Text>
-    </View>
-  );
+export type NativeStackParamList = {
+  [ScreenNames.WITH_BOTTOMTABS]: undefined;
+};
+
+const Stack = createNativeStackNavigator<NativeStackParamList>();
+
+const options: Record<string, NativeStackNavigationOptions> = {
+  [ScreenNames.WITH_BOTTOMTABS]: {
+    headerShown: false,
+  },
 };
 
 const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen
+          name={ScreenNames.WITH_BOTTOMTABS}
+          component={BottomTabs}
+          options={options[ScreenNames.WITH_BOTTOMTABS]}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

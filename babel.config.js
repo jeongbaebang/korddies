@@ -9,5 +9,16 @@ module.exports = {
         allowUndefined: false,
       },
     ],
+    [
+      'module-resolver',
+      {
+        root: ['./src'],
+        alias: {
+          '@shared': './src/shared',
+          '@navigation': './src/navigation',
+          '@modules': './src/modules',
+        },
+      },
+    ],
   ],
 };
