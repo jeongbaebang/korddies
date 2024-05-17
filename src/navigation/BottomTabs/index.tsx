@@ -7,6 +7,7 @@ import HomeStack from '@navigation/HomeStack';
 import MomentsScreen from '@modules/moments/screens/MomentsScreen';
 import ChatScreen from '@modules/chat/screens/ChatScreen';
 import ProfileScreen from '@modules/profile/screens/ProfileScreen';
+import { HouseIcon } from '@shared/components/Icons';
 
 type BottomTabParamList = {
   [ScreenNames.HOME]: undefined;
@@ -20,6 +21,7 @@ const Tab = createBottomTabNavigator<BottomTabParamList>();
 const options: Record<string, BottomTabNavigationOptions> = {
   [ScreenNames.HOME]: {
     tabBarLabel: '홈',
+    tabBarIcon: ({ color, size }) => <HouseIcon color={color} size={size} />,
   },
   [ScreenNames.MOMENTS]: {
     tabBarLabel: '모멘츠',
