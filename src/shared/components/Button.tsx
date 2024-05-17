@@ -1,6 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { sizeConverter } from '../constants/designSystem';
+
+import { converteToResponsiveStyle } from '@shared/constants/designSystem';
 
 export type MyButtonProps = {
   onPress: () => void;
@@ -26,7 +27,7 @@ const color = {
 };
 
 const styles = StyleSheet.create({
-  container: sizeConverter({
+  container: converteToResponsiveStyle({
     backgroundColor: color.container.background,
     borderRadius: 8,
     paddingHorizontal: 16,

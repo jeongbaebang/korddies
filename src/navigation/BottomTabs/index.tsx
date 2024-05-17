@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import type { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
@@ -7,11 +8,10 @@ import MomentsScreen from '@modules/moments/screens/MomentsScreen';
 import ChatScreen from '@modules/chat/screens/ChatScreen';
 import ProfileScreen from '@modules/profile/screens/ProfileScreen';
 import { HouseIcon } from '@shared/components/Icons';
-import GroupMeetingScreen from '@modules/groupMeeting/screens/GroupMeetingScreen';
-import { Platform } from 'react-native';
+import GroupMeetingStack from '@navigation/GroupMeetingStack';
 
 type BottomTabParamList = {
-  [ScreenNames.GROUP_MEETING]: undefined;
+  [ScreenNames.GROUP_MEETING_STACK]: undefined;
   [ScreenNames.MOMENTS]: undefined;
   [ScreenNames.CHAT]: undefined;
   [ScreenNames.MY_PROFILE]: undefined;
@@ -20,7 +20,7 @@ type BottomTabParamList = {
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const options: Record<string, BottomTabNavigationOptions> = {
-  [ScreenNames.GROUP_MEETING]: {
+  [ScreenNames.GROUP_MEETING_STACK]: {
     tabBarLabel: '홈',
     tabBarIcon: ({ color, size }) => <HouseIcon color={color} size={size} />,
   },
@@ -34,6 +34,8 @@ const options: Record<string, BottomTabNavigationOptions> = {
     tabBarLabel: '내 프로필',
   },
   TabNavigator: {
+    headerShown: false,
+    headerShadowVisible: false,
     tabBarStyle: {
       shadowColor: '#000', // 쉐도우 색상
       shadowOpacity: 0.1, // 쉐도우 불투명도
@@ -50,13 +52,12 @@ const BottomTabs = () => {
       safeAreaInsets={Platform.select({
         android: { bottom: 10 },
       })}
-      initialRouteName={ScreenNames.GROUP_MEETING}
-      screenOptions={options.TabNavigator}
-      detachInactiveScreens={false}>
+      initialRouteName={ScreenNames.GROUP_MEETING_STACK}
+      screenOptions={options.TabNavigator}>
       <Tab.Screen
-        name={ScreenNames.GROUP_MEETING}
-        component={GroupMeetingScreen}
-        options={options[ScreenNames.GROUP_MEETING]}
+        name={ScreenNames.GROUP_MEETING_STACK}
+        component={GroupMeetingStack}
+        options={options[ScreenNames.GROUP_MEETING_STACK]}
       />
       <Tab.Screen
         name={ScreenNames.MOMENTS}
