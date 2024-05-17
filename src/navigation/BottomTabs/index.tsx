@@ -3,14 +3,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import type { BottomTabNavigationOptions } from '@react-navigation/bottom-tabs';
 
 import { ScreenNames } from '@navigation/screenNames';
-import HomeStack from '@navigation/HomeStack';
 import MomentsScreen from '@modules/moments/screens/MomentsScreen';
 import ChatScreen from '@modules/chat/screens/ChatScreen';
 import ProfileScreen from '@modules/profile/screens/ProfileScreen';
 import { HouseIcon } from '@shared/components/Icons';
+import GroupMeetingScreen from '@modules/groupMeeting/screens/GroupMeetingScreen';
 
 type BottomTabParamList = {
-  [ScreenNames.HOME]: undefined;
+  [ScreenNames.GROUP_MEETING]: undefined;
   [ScreenNames.MOMENTS]: undefined;
   [ScreenNames.CHAT]: undefined;
   [ScreenNames.MY_PROFILE]: undefined;
@@ -19,7 +19,7 @@ type BottomTabParamList = {
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 
 const options: Record<string, BottomTabNavigationOptions> = {
-  [ScreenNames.HOME]: {
+  [ScreenNames.GROUP_MEETING]: {
     tabBarLabel: '홈',
     tabBarIcon: ({ color, size }) => <HouseIcon color={color} size={size} />,
   },
@@ -50,12 +50,13 @@ const options: Record<string, BottomTabNavigationOptions> = {
 const BottomTabs = () => {
   return (
     <Tab.Navigator
+      initialRouteName={ScreenNames.GROUP_MEETING}
       screenOptions={options.TabNavigator}
       detachInactiveScreens={false}>
       <Tab.Screen
-        name={ScreenNames.HOME}
-        component={HomeStack}
-        options={options[ScreenNames.HOME]}
+        name={ScreenNames.GROUP_MEETING}
+        component={GroupMeetingScreen}
+        options={options[ScreenNames.GROUP_MEETING]}
       />
       <Tab.Screen
         name={ScreenNames.MOMENTS}
