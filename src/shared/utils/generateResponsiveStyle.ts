@@ -21,7 +21,7 @@ const generateResponsiveStyle = (
 };
 
 type CalculatedStyle = {
-  [Key in string]: string | number;
+  [Key in string]: string | number | any;
 };
 
 /**

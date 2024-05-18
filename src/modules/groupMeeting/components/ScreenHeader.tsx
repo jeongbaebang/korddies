@@ -3,7 +3,10 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { sizeConverter } from '@shared/constants/designSystem';
+import {
+  converteToResponsiveStyle,
+  sizeConverter,
+} from '@shared/constants/designSystem';
 import { IconProps, PlusIcon, SerchIcon } from '@shared/components/Icons';
 
 const GroupMeetingScreenHeader: (
@@ -78,11 +81,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginHorizontal: sizeConverter(22),
   },
-  outerContainer: {
+  outerContainer: converteToResponsiveStyle({
     justifyContent: 'center',
     maxHeight: 150,
-    minHeight: sizeConverter(60),
-  },
+    minHeight: 60,
+  }),
   rightActionButton: {
     alignItems: 'center',
     aspectRatio: 1.0,
