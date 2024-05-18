@@ -44,6 +44,8 @@ const MissionCard: React.FC<Options> = ({
 };
 
 const LeftContent: React.FC<{ payload: LeftContent }> = ({ payload }) => {
+  const DESCRIPTION_TEXT_MAXLINE = 2;
+
   return (
     <View style={styles.leftContentContainer}>
       <View>
@@ -53,6 +55,7 @@ const LeftContent: React.FC<{ payload: LeftContent }> = ({ payload }) => {
       </View>
       <View style={styles.leftContentDescriptionContainer}>
         <Text
+          numberOfLines={DESCRIPTION_TEXT_MAXLINE}
           style={[styles.leftContentDescriptionFont, payload.description.font]}>
           {payload.description.text}
         </Text>

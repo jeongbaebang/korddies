@@ -1,9 +1,10 @@
+import { View, ViewStyle } from 'react-native';
 import type { Meta, StoryObj } from '@storybook/react';
 
 import MissionCard from './MissionCard';
-import ManWomanSVG from '@modules/groupMeeting/assets/ManWomanSVG';
+import ManWomanSVG from '@modules/groupMeeting/assets/KoreanManWomanSVG';
 import SpaSVG from '@modules/groupMeeting/assets/SpaSVG';
-import { View } from 'react-native';
+import { converteToResponsiveStyle } from '@shared/constants/designSystem';
 
 const MyButtonMeta: Meta<typeof MissionCard> = {
   title: 'modules/groupMeeting/cards/MissionCard',
@@ -36,7 +37,19 @@ export const CardType01: StoryObj<typeof MissionCard> = {
         backgroundColor: '#FFFFFF',
       },
     },
-    RightContent: ManWomanSVG,
+    RightContent: () => {
+      return (
+        <View
+          style={converteToResponsiveStyle<ViewStyle>({
+            flexDirection: 'row',
+            gap: 4,
+            height: 77,
+            width: 61,
+          })}>
+          <ManWomanSVG />
+        </View>
+      );
+    },
   },
 };
 
@@ -67,11 +80,11 @@ export const CardType02: StoryObj<typeof MissionCard> = {
     RightContent: () => {
       return (
         <View
-          style={{
+          style={converteToResponsiveStyle<ViewStyle>({
             width: 84,
             height: 59,
             alignSelf: 'center',
-          }}>
+          })}>
           <SpaSVG />
         </View>
       );
