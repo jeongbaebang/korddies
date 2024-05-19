@@ -20,13 +20,13 @@ type LeftContent = {
   date: Content & { backgroundColor: string };
 };
 
-type Options = {
+type Props = {
   backgroundColor: string;
   leftContent: LeftContent;
   RightContent: () => React.JSX.Element;
 };
 
-const MissionCard: React.FC<Options> = ({
+const MissionCard: React.FC<Props> = ({
   RightContent,
   backgroundColor,
   leftContent,
@@ -115,3 +115,5 @@ const styles = StyleSheet.create({
 });
 
 export default MissionCard;
+
+export type { Props as MissionCardProps };
