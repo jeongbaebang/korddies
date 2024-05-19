@@ -109,8 +109,8 @@ const styles = StyleSheet.create({
   },
   outerContainer: converteToResponsiveStyle({
     borderRadius: 5,
-    minHeight: 102,
     width: 258,
+    flex: 1,
   }),
 });
 
