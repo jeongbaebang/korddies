@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ViewStyle } from 'react-native';
 import React from 'react';
 import {
   sizeConverter,
@@ -22,17 +22,24 @@ type LeftContent = {
 
 type Props = {
   backgroundColor: string;
+  fullWidth?: boolean;
   leftContent: LeftContent;
   RightContent: () => React.JSX.Element;
 };
 
 const MissionCard: React.FC<Props> = ({
-  RightContent,
   backgroundColor,
+  fullWidth,
   leftContent,
+  RightContent,
 }) => {
+  const outerContainerStyle: ViewStyle = {
+    backgroundColor,
+    width: fullWidth ? '100%' : sizeConverter(258),
+  };
+
   return (
-    <View style={[styles.outerContainer, { backgroundColor }]}>
+    <View style={[styles.outerContainer, outerContainerStyle]}>
       <View style={styles.innerContainer}>
         <View style={styles.contentContainer}>
           <LeftContent payload={leftContent} />
@@ -109,7 +116,6 @@ const styles = StyleSheet.create({
   },
   outerContainer: converteToResponsiveStyle({
     borderRadius: 5,
-    width: 258,
     flex: 1,
   }),
 });

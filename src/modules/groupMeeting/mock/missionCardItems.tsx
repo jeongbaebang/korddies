@@ -4,8 +4,10 @@ import { View, ViewStyle } from 'react-native';
 import { converteToResponsiveStyle } from '@shared/constants/designSystem';
 import ManWomanSVG from '../assets/KoreanManWomanSVG';
 import SpaSVG from '../assets/SpaSVG';
+import { MissionCardProps } from '../components/cards/MissionCard';
 
-export const type01 = {
+export const type01: MissionCardProps = {
+  fullWidth: false,
   backgroundColor: '#FFF4F4',
   leftContent: {
     title: {
@@ -44,7 +46,8 @@ export const type01 = {
   },
 };
 
-export const type02 = {
+export const type02: MissionCardProps = {
+  fullWidth: false,
   backgroundColor: '#FFFDEC',
   leftContent: {
     title: {
