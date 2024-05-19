@@ -6,12 +6,12 @@ import ManWomanSVG from '@modules/groupMeeting/assets/KoreanManWomanSVG';
 import SpaSVG from '@modules/groupMeeting/assets/SpaSVG';
 import { converteToResponsiveStyle } from '@shared/constants/designSystem';
 
-const MyButtonMeta: Meta<typeof MissionCard> = {
+const StoryComponent: Meta<typeof MissionCard> = {
   title: 'modules/groupMeeting/cards/MissionCard',
   component: MissionCard,
 };
 
-export default MyButtonMeta;
+export default StoryComponent;
 
 export const CardType01: StoryObj<typeof MissionCard> = {
   args: {
