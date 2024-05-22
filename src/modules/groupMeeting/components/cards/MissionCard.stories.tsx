@@ -1,7 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import MissionCard from './MissionCard';
-import { type01, type02 } from '@modules/groupMeeting/mock/missionCardItems';
+import {
+  type01,
+  type02,
+  type03,
+  type04,
+} from '@modules/groupMeeting/mock/missionCardItems';
 import { View } from 'react-native';
 import { sizeConverter } from '@shared/constants/designSystem';
 
@@ -27,4 +32,12 @@ export const CardType01: StoryObj<typeof MissionCard> = {
 
 export const CardType02: StoryObj<typeof MissionCard> = {
   args: type02,
+};
+
+export const CardType03: StoryObj<typeof MissionCard> = {
+  args: type03,
+};
+
+export const CardType04: StoryObj<typeof MissionCard> = {
+  args: type04,
 };

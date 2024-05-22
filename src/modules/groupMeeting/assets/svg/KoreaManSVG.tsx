@@ -9,7 +9,13 @@ import Svg, {
 } from 'react-native-svg';
 
 const KoreaManSVG = (props: SvgProps) => (
-  <Svg width={'100%'} height={'100%'} fill="none" {...props}>
+  <Svg
+    fill="none"
+    width="100%"
+    height="100%"
+    viewBox="0 0 28 77"
+    preserveAspectRatio="xMidYMid meet"
+    {...props}>
     <Path fill="url(#a)" d="M0 0h28v77H0z" />
     <Defs>
       <Pattern
