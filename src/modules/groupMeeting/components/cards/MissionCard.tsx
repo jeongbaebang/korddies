@@ -103,9 +103,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: 136,
   }),
-  leftContentDateFont: {
-    fontSize: sizeConverter(8),
-  },
+  leftContentDateFont: convertToResponsiveStyle({
+    fontSize: 8,
+    lineHeight: 18 / 2, // leftContentDateContainer 높이
+    textAlign: 'center',
+    textAlignVertical: 'center',
+  }),
   leftContentDescriptionContainer: convertToResponsiveStyle({
     marginBottom: 8,
     marginTop: 5,
