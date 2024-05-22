@@ -2,7 +2,7 @@ import { StyleSheet, View } from 'react-native';
 import React from 'react';
 
 import {
-  converteToResponsiveStyle,
+  convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
 import SpaSVG from './svg/SpaSVG';
@@ -22,7 +22,7 @@ const BathingPeople: React.FC<Props> = ({ fullWidth }) => {
 export default BathingPeople;
 
 const styles = StyleSheet.create({
-  container: converteToResponsiveStyle({
+  container: convertToResponsiveStyle({
     width: 115,
     alignSelf: 'center',
   }),

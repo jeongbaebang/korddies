@@ -2,7 +2,7 @@ import { View, StyleSheet, Text } from 'react-native';
 import React from 'react';
 import {
   sizeConverter,
-  converteToResponsiveStyle,
+  convertToResponsiveStyle,
 } from '@shared/constants/designSystem';
 
 type Font = {
@@ -54,7 +54,7 @@ const MissionCard: React.FC<Props> = ({
 };
 
 const LeftContent: React.FC<{ payload: LeftContent }> = ({ payload }) => {
-  const DESCRIPTION_TEXT_MAXLINE = 2;
+  const DESCRIPTION_TEXT_MAX_LINE = 2;
 
   return (
     <View style={styles.leftContentContainer}>
@@ -65,7 +65,7 @@ const LeftContent: React.FC<{ payload: LeftContent }> = ({ payload }) => {
       </View>
       <View style={styles.leftContentDescriptionContainer}>
         <Text
-          numberOfLines={DESCRIPTION_TEXT_MAXLINE}
+          numberOfLines={DESCRIPTION_TEXT_MAX_LINE}
           style={[styles.leftContentDescriptionFont, payload.description.font]}>
           {payload.description.text}
         </Text>
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
   },
-  leftContentDateContainer: converteToResponsiveStyle({
+  leftContentDateContainer: convertToResponsiveStyle({
     alignItems: 'center',
     borderRadius: 4,
     height: 18,
@@ -106,7 +106,7 @@ const styles = StyleSheet.create({
   leftContentDateFont: {
     fontSize: sizeConverter(8),
   },
-  leftContentDescriptionContainer: converteToResponsiveStyle({
+  leftContentDescriptionContainer: convertToResponsiveStyle({
     marginBottom: 8,
     marginTop: 5,
   }),
@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
     flex: 1,
     width: sizeConverter(258),
   },
-  outerContainerFullWidth: converteToResponsiveStyle({
+  outerContainerFullWidth: convertToResponsiveStyle({
     height: 127,
     paddingHorizontal: 18,
     paddingVertical: 14,

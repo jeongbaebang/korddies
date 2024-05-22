@@ -12,7 +12,7 @@ const sizeConverter = generateResponsiveStyle(
   currentDeviceWidth,
   referenceDeviceWidth,
 );
-const converteToResponsiveStyle = responsiveStyleAdapter(sizeConverter);
+const convertToResponsiveStyle = responsiveStyleAdapter(sizeConverter);
 
 const theme = {
   color: {
@@ -34,4 +34,4 @@ const theme = {
   },
 } as const;
 
-export { sizeConverter, converteToResponsiveStyle, theme };
+export { sizeConverter, convertToResponsiveStyle, theme };

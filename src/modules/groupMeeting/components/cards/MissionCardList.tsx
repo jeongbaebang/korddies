@@ -4,7 +4,7 @@ import React from 'react';
 import type { MissionCardProps } from './MissionCard';
 import MissionCard from './MissionCard';
 import {
-  converteToResponsiveStyle,
+  convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
 
@@ -28,7 +28,7 @@ const MissionCardList: React.FC<Props> = (props) => {
 };
 
 const styles = StyleSheet.create({
-  scrollViewContainer: converteToResponsiveStyle({
+  scrollViewContainer: convertToResponsiveStyle({
     flexDirection: 'row',
     gap: 10,
     height: 131,

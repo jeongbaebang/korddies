@@ -2,7 +2,7 @@ import { View, StyleSheet } from 'react-native';
 import React from 'react';
 
 import {
-  converteToResponsiveStyle,
+  convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
 import KoreanWomanSVG from './svg/KoreanWomanSVG';
@@ -47,22 +47,22 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     flexDirection: 'row',
   },
-  large: converteToResponsiveStyle({
+  large: convertToResponsiveStyle({
     gap: 8,
     width: 85,
   }),
-  left: converteToResponsiveStyle({
+  left: convertToResponsiveStyle({
     height: 98,
     marginTop: -15,
   }),
-  medium: converteToResponsiveStyle({
+  medium: convertToResponsiveStyle({
     gap: 4,
     width: 61,
   }),
   mediumItem: {
     width: sizeConverter(28),
   },
-  right: converteToResponsiveStyle({
+  right: convertToResponsiveStyle({
     height: 106,
     marginTop: -23,
   }),

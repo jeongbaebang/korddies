@@ -10,7 +10,7 @@ const HouseIcon = (props: IconProps) => {
   return <FontAwesomeIcon icon={faHouse} {...props} />;
 };
 
-const SerchIcon = (props: IconProps) => {
+const SearchIcon = (props: IconProps) => {
   return <FontAwesomeIcon icon={faMagnifyingGlass} {...props} />;
 };
 
@@ -18,4 +18,4 @@ const PlusIcon = (props: IconProps) => {
   return <FontAwesomeIcon icon={faPlus} {...props} />;
 };
 
-export { HouseIcon, SerchIcon, PlusIcon };
+export { HouseIcon, SearchIcon, PlusIcon };
