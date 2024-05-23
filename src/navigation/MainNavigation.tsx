@@ -7,13 +7,13 @@ import { ScreenNames } from '@navigation/screenNames';
 import BottomTabs from '@navigation/BottomTabs';
 
 export type NativeStackParamList = {
-  [ScreenNames.WITH_BOTTOMTABS]: undefined;
+  [ScreenNames.WITH_BOTTOM_TABS]: undefined;
 };
 
 const Stack = createNativeStackNavigator<NativeStackParamList>();
 
 const options: Record<string, NativeStackNavigationOptions> = {
-  [ScreenNames.WITH_BOTTOMTABS]: {
+  [ScreenNames.WITH_BOTTOM_TABS]: {
     headerShown: false,
   },
 };
@@ -23,9 +23,9 @@ const MainNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name={ScreenNames.WITH_BOTTOMTABS}
+          name={ScreenNames.WITH_BOTTOM_TABS}
           component={BottomTabs}
-          options={options[ScreenNames.WITH_BOTTOMTABS]}
+          options={options[ScreenNames.WITH_BOTTOM_TABS]}
         />
       </Stack.Navigator>
     </NavigationContainer>

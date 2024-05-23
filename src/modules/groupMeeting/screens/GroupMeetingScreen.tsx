@@ -9,7 +9,7 @@ const GroupMeetingScreen = ({ navigation }: any) => {
       <Text>GroupMeetingScreen Screen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate(ScreenNames.GROUP_MEETING_DETIAL)}
+        onPress={() => navigation.navigate(ScreenNames.GROUP_MEETING_DETAIL)}
       />
     </View>
   );

@@ -9,7 +9,7 @@ import GroupMeetingScreenHeader from '@modules/groupMeeting/screens/ScreenHeader
 
 export type NativeStackParamList = {
   [ScreenNames.GROUP_MEETING]: undefined;
-  [ScreenNames.GROUP_MEETING_DETIAL]: undefined;
+  [ScreenNames.GROUP_MEETING_DETAIL]: undefined;
 };
 
 const Stack = createNativeStackNavigator<NativeStackParamList>();
@@ -18,7 +18,7 @@ const options: Record<string, NativeStackNavigationOptions> = {
   [ScreenNames.GROUP_MEETING]: {
     header: GroupMeetingScreenHeader,
   },
-  [ScreenNames.GROUP_MEETING_DETIAL]: {},
+  [ScreenNames.GROUP_MEETING_DETAIL]: {},
   StackNavigator: {
     headerShadowVisible: false,
   },
@@ -33,9 +33,9 @@ const GroupMeetingStack = () => {
         options={options[ScreenNames.GROUP_MEETING]}
       />
       <Stack.Screen
-        name={ScreenNames.GROUP_MEETING_DETIAL}
+        name={ScreenNames.GROUP_MEETING_DETAIL}
         component={GroupMeetingDetailScreen}
-        options={options[ScreenNames.GROUP_MEETING_DETIAL]}
+        options={options[ScreenNames.GROUP_MEETING_DETAIL]}
       />
     </Stack.Navigator>
   );
