@@ -1,20 +1,15 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
 
-import {
-  convertToResponsiveStyle,
-  sizeConverter,
-} from '@shared/constants/designSystem';
+import { sizeConverter } from '@shared/constants/designSystem';
 import SpaSVG from './svg/SpaSVG';
 
-type Props = {
-  fullWidth?: boolean;
-};
-
-const BathingPeople: React.FC<Props> = ({ fullWidth }) => {
+const BathingPeople = () => {
   return (
-    <View style={[styles.container, fullWidth ? styles.large : styles.medium]}>
-      <SpaSVG />
+    <View style={styles.container}>
+      <View style={styles.svgContainer}>
+        <SpaSVG />
+      </View>
     </View>
   );
 };
@@ -22,14 +17,11 @@ const BathingPeople: React.FC<Props> = ({ fullWidth }) => {
 export default BathingPeople;
 
 const styles = StyleSheet.create({
-  container: convertToResponsiveStyle({
-    width: 115,
+  container: {
     alignSelf: 'center',
-  }),
-  large: {
-    width: sizeConverter(115),
+    justifyContent: 'center',
   },
-  medium: {
-    width: sizeConverter(84),
+  svgContainer: {
+    width: sizeConverter(66),
   },
 });

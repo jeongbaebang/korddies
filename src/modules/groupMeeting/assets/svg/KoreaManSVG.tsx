@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Svg, {
+  SvgProps,
   Path,
   Defs,
   Pattern,
   Use,
   Image,
-  SvgProps,
 } from 'react-native-svg';
 
 const KoreaManSVG = (props: SvgProps) => (
@@ -13,10 +13,10 @@ const KoreaManSVG = (props: SvgProps) => (
     fill="none"
     width="100%"
     height="100%"
-    viewBox="0 0 28 77"
+    viewBox="0 0 25 67"
     preserveAspectRatio="xMidYMid meet"
     {...props}>
-    <Path fill="url(#a)" d="M0 0h28v77H0z" />
+    <Path fill="url(#a)" d="M0 0h24.371v67H0z" />
     <Defs>
       <Pattern
         id="a"

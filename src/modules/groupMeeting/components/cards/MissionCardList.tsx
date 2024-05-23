@@ -31,9 +31,9 @@ const styles = StyleSheet.create({
   scrollViewContainer: convertToResponsiveStyle({
     flexDirection: 'row',
     gap: 10,
-    height: 131,
-    paddingHorizontal: 22,
-    paddingVertical: 13,
+    height: 118,
+    paddingHorizontal: 20,
+    paddingVertical: 8,
   }),
 });
 

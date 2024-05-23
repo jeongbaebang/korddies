@@ -1,71 +1,36 @@
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 
-import {
-  convertToResponsiveStyle,
-  sizeConverter,
-} from '@shared/constants/designSystem';
 import KoreanWomanSVG from './svg/KoreanWomanSVG';
+import { sizeConverter } from '@shared/constants/designSystem';
 import KoreaManSVG from './svg/KoreaManSVG';
 
 const KoreanManWoman = () => {
-  const leftStyle = { marginTop: sizeConverter(8) };
-
   return (
-    <View style={[styles.container, styles.medium]}>
-      <View style={[styles.mediumItem, leftStyle]}>
+    <View style={styles.container}>
+      <View style={[styles.svgContainer, styles.womanMarginTop]}>
         <KoreanWomanSVG />
       </View>
-      <View style={styles.mediumItem}>
+      <View style={styles.svgContainer}>
         <KoreaManSVG />
       </View>
     </View>
   );
 };
 
-const KoreanManWomanFullWidth = () => {
-  const left = styles.left;
-  const right = styles.right;
-
-  return (
-    <View style={[styles.container, styles.large]}>
-      <View style={[styles.LargeItem, { marginTop: left.marginTop }]}>
-        <KoreanWomanSVG height={left.height} />
-      </View>
-      <View style={[styles.LargeItem, { marginTop: right.marginTop }]}>
-        <KoreaManSVG height={right.height} />
-      </View>
-    </View>
-  );
-};
+export default KoreanManWoman;
 
 const styles = StyleSheet.create({
-  LargeItem: {
-    width: sizeConverter(40),
-  },
   container: {
     alignSelf: 'center',
     flexDirection: 'row',
+    gap: sizeConverter(2),
+    justifyContent: 'center',
   },
-  large: convertToResponsiveStyle({
-    gap: 8,
-    width: 85,
-  }),
-  left: convertToResponsiveStyle({
-    height: 98,
-    marginTop: -15,
-  }),
-  medium: convertToResponsiveStyle({
-    gap: 4,
-    width: 61,
-  }),
-  mediumItem: {
-    width: sizeConverter(28),
+  svgContainer: {
+    width: sizeConverter(25),
   },
-  right: convertToResponsiveStyle({
-    height: 106,
-    marginTop: -23,
-  }),
+  womanMarginTop: {
+    marginTop: sizeConverter(10),
+  },
 });
-
-export { KoreanManWoman, KoreanManWomanFullWidth };

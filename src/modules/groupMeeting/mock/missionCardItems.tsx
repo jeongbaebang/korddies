@@ -1,34 +1,16 @@
 import React from 'react';
+import { View } from 'react-native';
 
 import { MissionCardProps } from '../components/cards/MissionCard';
+import KoreanManWoman from '../assets/KoreanManWoman';
 import BathingPeople from '../assets/BathingPeople';
-import {
-  KoreanManWoman,
-  KoreanManWomanFullWidth,
-} from '../assets/KoreanManWoman';
 
 export const type01: MissionCardProps = {
-  backgroundColor: '#FFF4F4',
+  backgroundColor: '#FFEEEF',
   leftContent: {
-    title: {
-      font: {
-        color: '#1B1A57',
-      },
-      text: '경복궁 한복 나들이',
-    },
-    description: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'kyungbok palace with han-bok',
-    },
-    date: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'Challenge Week | 05/13 ~ 05/19',
-      backgroundColor: '#FFFFFF',
-    },
+    title: '경복궁 한복 나들이',
+    description: 'kyungbok palace with han-bok',
+    date: 'Challenge Week | 05/13 - 05/19',
   },
   RightContent: () => <KoreanManWoman />,
 };
@@ -36,79 +18,29 @@ export const type01: MissionCardProps = {
 export const type02: MissionCardProps = {
   backgroundColor: '#FFFDEC',
   leftContent: {
-    title: {
-      font: {
-        color: '#1B1A57',
-      },
-      text: '찜질방 체험',
-    },
-    description: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'Enjoying Korea spa',
-    },
-    date: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'Challenge Week | 05/20 ~ 05/26',
-      backgroundColor: '#FFFFFF',
-    },
+    title: '찜질방 체험',
+    description: 'Enjoying Korea spa',
+    date: 'Challenge Week | 05/20 - 05/26',
   },
   RightContent: () => <BathingPeople />,
 };
 
 export const type03: MissionCardProps = {
-  fullWidth: true,
-  backgroundColor: '#FFF4F4',
+  backgroundColor: '#FFEEEF',
   leftContent: {
-    title: {
-      font: {
-        color: '#1B1A57',
-      },
-      text: '경복궁 한복 나들이',
-    },
-    description: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'kyungbok palace with han-bok',
-    },
-    date: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'Challenge Week | 05/13 ~ 05/19',
-      backgroundColor: '#FFFFFF',
-    },
+    title: '경복궁 한복 나들이',
+    description: 'kyungbok palace with han-bok',
+    date: 'Challenge Week | 05/13 - 05/19',
   },
-  RightContent: () => <KoreanManWomanFullWidth />,
+  RightContent: () => <View />,
 };
 
 export const type04: MissionCardProps = {
-  fullWidth: true,
   backgroundColor: '#FFFDEC',
   leftContent: {
-    title: {
-      font: {
-        color: '#1B1A57',
-      },
-      text: '찜질방 체험',
-    },
-    description: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'Enjoying Korea spa',
-    },
-    date: {
-      font: {
-        color: '#4F5E7B',
-      },
-      text: 'Challenge Week | 05/20 ~ 05/26',
-      backgroundColor: '#FFFFFF',
-    },
+    title: '찜질방 체험',
+    description: 'Enjoying Korea spa',
+    date: 'Challenge Week | 05/20 - 05/26',
   },
-  RightContent: () => <BathingPeople fullWidth />,
+  RightContent: () => <View />,
 };
