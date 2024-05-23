@@ -2,6 +2,10 @@ import { StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
 
 import { ClockIcon, UserGroupIcon } from '@shared/components/Icons';
+import {
+  sizeConverter,
+  convertToResponsiveStyle,
+} from '@shared/constants/designSystem';
 
 type Props = {
   leftContent: LeftContent;
@@ -52,10 +56,10 @@ const LeftContent: React.FC<{ data: LeftContent }> = ({ data }) => {
         fontWeight: 'bold',
       },
       top: {
-        fontSize: 11,
+        fontSize: sizeConverter(11),
       },
       bottom: {
-        fontSize: 18,
+        fontSize: sizeConverter(18),
       },
     } as { [key: string]: TextStyle },
   };
@@ -83,23 +87,23 @@ const RightContent: React.FC<{ data: RightContent }> = ({ data }) => {
   const { info, description, title } = {
     title: {
       font: {
-        fontSize: 15,
+        fontSize: sizeConverter(15),
         color: '#1B1A57',
       },
     },
     description: {
       font: {
-        fontSize: 11,
+        fontSize: sizeConverter(11),
         color: '#4F5E7B',
       },
     },
     info: {
       icon: {
-        size: 12,
+        size: sizeConverter(12),
         color: '#E6E6EA',
       },
       font: {
-        fontSize: 11,
+        fontSize: sizeConverter(11),
         color: '#4F5E7B',
       },
     },
@@ -130,45 +134,45 @@ const RightContent: React.FC<{ data: RightContent }> = ({ data }) => {
 const styles = StyleSheet.create({
   contentContainer: {
     flexDirection: 'row',
-    gap: 15,
+    gap: sizeConverter(15),
   },
   innerContainer: {},
-  outerContainer: {
+  outerContainer: convertToResponsiveStyle({
     borderBottomWidth: 1,
     minHeight: 100,
     paddingHorizontal: 20,
     paddingVertical: 19,
-  },
+  }),
 });
 
 const leftStyles = StyleSheet.create({
   content: {
     alignItems: 'center',
   },
-  contentContainer: {
+  contentContainer: convertToResponsiveStyle({
     alignItems: 'center',
     borderRadius: 5,
     height: 47,
     justifyContent: 'center',
     width: 35,
-  },
+  }),
 });
 
 const rightStyles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'space-between',
-    minHeight: 60,
+    minHeight: sizeConverter(60),
   },
-  infoContainer: {
+  infoContainer: convertToResponsiveStyle({
     flexDirection: 'row',
     gap: 15,
     marginTop: 3,
-  },
+  }),
   infoContent: {
     alignItems: 'center',
     flexDirection: 'row',
-    gap: 5,
+    gap: sizeConverter(5),
   },
 });
 
