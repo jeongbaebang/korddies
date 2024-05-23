@@ -3,19 +3,27 @@ import { FontAwesomeIcon, Props } from '@fortawesome/react-native-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons/faHouse';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass';
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
+import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
+import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup';
 
 export type IconProps = Omit<Props, 'icon'> & { focused?: boolean };
 
-const HouseIcon = (props: IconProps) => {
+export const HouseIcon = (props: IconProps) => {
   return <FontAwesomeIcon icon={faHouse} {...props} />;
 };
 
-const SearchIcon = (props: IconProps) => {
+export const SearchIcon = (props: IconProps) => {
   return <FontAwesomeIcon icon={faMagnifyingGlass} {...props} />;
 };
 
-const PlusIcon = (props: IconProps) => {
+export const PlusIcon = (props: IconProps) => {
   return <FontAwesomeIcon icon={faPlus} {...props} />;
 };
 
-export { HouseIcon, SearchIcon, PlusIcon };
+export const ClockIcon = (props: IconProps) => {
+  return <FontAwesomeIcon icon={faClock} {...props} />;
+};
+
+export const UserGroupIcon = (props: IconProps) => {
+  return <FontAwesomeIcon icon={faUserGroup} {...props} />;
+};
