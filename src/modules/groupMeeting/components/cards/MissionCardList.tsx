@@ -7,7 +7,6 @@ import {
   convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
-
 type Props = {
   data: MissionCardProps[];
 };

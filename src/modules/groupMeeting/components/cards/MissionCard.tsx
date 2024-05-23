@@ -7,21 +7,28 @@ import {
 
 type Props = {
   backgroundColor: string;
+  fullWidth?: boolean;
   leftContent: LeftContent;
   RightContent: () => React.JSX.Element;
 };
 
 const MissionCard: React.FC<Props> = ({
   backgroundColor,
+  fullWidth,
   leftContent,
   RightContent,
 }) => {
+  const width = fullWidth ? '100%' : sizeConverter(274);
+  const rightWidth = fullWidth
+    ? rightStyles.fullWidthContainer
+    : rightStyles.container;
+
   return (
-    <View style={[styles.outerContainer, { backgroundColor }]}>
+    <View style={[styles.outerContainer, { backgroundColor, width }]}>
       <View style={styles.innerContainer}>
         <View style={styles.contentContainer}>
           <LeftContent data={leftContent} />
-          <View style={rightStyles.container}>
+          <View style={rightWidth}>
             <RightContent />
           </View>
         </View>
@@ -77,14 +84,27 @@ const LeftContent: React.FC<{ data: LeftContent }> = ({ data }) => {
   );
 };
 
+const MissionCardFullWidth: React.FC<Props> = (props) => {
+  return (
+    <View style={styles.fullWidthContainer}>
+      <MissionCard fullWidth {...props} />
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
   contentContainer: {
     flexDirection: 'row',
     height: '100%',
   },
+  fullWidthContainer: convertToResponsiveStyle({
+    height: 118,
+    justifyContent: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 8,
+  }),
   innerContainer: {},
   outerContainer: convertToResponsiveStyle({
-    width: 274,
     height: 102,
     borderRadius: 10,
     overflow: 'hidden',
@@ -111,7 +131,11 @@ const rightStyles = StyleSheet.create({
   container: {
     width: sizeConverter(89 - 14), // 14 = marginLeft
   },
+  fullWidthContainer: {
+    width: sizeConverter(89),
+  },
 });
 
 export default MissionCard;
 export type { Props as MissionCardProps };
+export { MissionCardFullWidth };
