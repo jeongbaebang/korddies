@@ -27,6 +27,16 @@ type Props = {
   RightContent: () => React.JSX.Element;
 };
 
+/**
+ * [LeftContent]
+ * 미션 이벤트 정보 표시 컴포넌트
+ * 제목, 설명, 이벤트 기간
+ *
+ * - 설명 입력 길이 최대 2줄로 제한
+ *
+ * [RightContent]
+ * 이미지, SVG 표시 컴포넌트
+ */
 const MissionCard: React.FC<Props> = ({
   backgroundColor,
   fullWidth,
