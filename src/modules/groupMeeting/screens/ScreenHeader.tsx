@@ -7,7 +7,11 @@ import {
   convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
-import { IconProps, PlusIcon, SearchIcon } from '@shared/components/Icons';
+import {
+  CirclePlusIcon,
+  IconProps,
+  SearchIcon,
+} from '@shared/components/Icons';
 
 const GroupMeetingScreenHeader: (
   props: NativeStackHeaderProps,
@@ -48,14 +52,14 @@ const HeaderTitle = () => {
 
 const RightActionButtons = () => {
   const options = {
-    size: sizeConverter(18),
-    color: '#4F5E7B',
+    size: sizeConverter(20),
+    color: '#1B1A57',
   };
 
   return (
     <View style={styles.rightActionContainer}>
       <ActionButton Icon={SearchIcon} {...options} />
-      <ActionButton Icon={PlusIcon} {...options} />
+      <ActionButton Icon={CirclePlusIcon} {...options} />
     </View>
   );
 };

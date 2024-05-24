@@ -5,6 +5,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyin
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus';
 import { faClock } from '@fortawesome/free-solid-svg-icons/faClock';
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons/faUserGroup';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons/faCirclePlus';
 
 export type IconProps = Omit<Props, 'icon'> & { focused?: boolean };
 
@@ -18,6 +19,10 @@ export const SearchIcon = (props: IconProps) => {
 
 export const PlusIcon = (props: IconProps) => {
   return <FontAwesomeIcon icon={faPlus} {...props} />;
+};
+
+export const CirclePlusIcon = (props: IconProps) => {
+  return <FontAwesomeIcon icon={faCirclePlus} {...props} />;
 };
 
 export const ClockIcon = (props: IconProps) => {
