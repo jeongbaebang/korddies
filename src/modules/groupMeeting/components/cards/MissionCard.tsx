@@ -18,13 +18,17 @@ const MissionCard: React.FC<Props> = ({
   leftContent,
   RightContent,
 }) => {
-  const width = fullWidth ? '100%' : sizeConverter(274);
+  const outerContainerWidth = fullWidth ? '100%' : sizeConverter(274);
   const rightWidth = fullWidth
     ? rightStyles.fullWidthContainer
     : rightStyles.container;
 
   return (
-    <View style={[styles.outerContainer, { backgroundColor, width }]}>
+    <View
+      style={[
+        styles.outerContainer,
+        { backgroundColor, width: outerContainerWidth },
+      ]}>
       <View style={styles.innerContainer}>
         <View style={styles.contentContainer}>
           <LeftContent data={leftContent} />

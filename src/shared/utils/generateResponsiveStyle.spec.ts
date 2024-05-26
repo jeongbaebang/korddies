@@ -27,11 +27,11 @@ describe('styleCalculator Function', () => {
     const referenceWidth = 393;
 
     const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
-    const exptedSizes = [10, 51, 102, 204, 306, 407, 1018];
+    const expectedSizes = [10, 51, 102, 204, 306, 407, 1018];
 
     targetSizes.forEach((size, index) => {
       expect(styleCalculatorCore(size, deviceWidth, referenceWidth)).toBe(
-        exptedSizes[index],
+        expectedSizes[index],
       );
     });
   });
@@ -41,11 +41,11 @@ describe('styleCalculator Function', () => {
     const referenceWidth = 393;
 
     const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
-    const exptedSizes = [7, 36, 71, 143, 214, 285, 713];
+    const expectedSizes = [7, 36, 71, 143, 214, 285, 713];
 
     targetSizes.forEach((size, index) => {
       expect(styleCalculatorCore(size, deviceWidth, referenceWidth)).toBe(
-        exptedSizes[index],
+        expectedSizes[index],
       );
     });
   });
@@ -55,11 +55,11 @@ describe('styleCalculator Function', () => {
     const referenceWidth = 393;
 
     const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
-    const exptedSizes = [10, 50, 100, 200, 300, 400, 1000];
+    const expectedSizes = [10, 50, 100, 200, 300, 400, 1000];
 
     targetSizes.forEach((size, index) => {
       expect(styleCalculatorCore(size, deviceWidth, referenceWidth)).toBe(
-        exptedSizes[index],
+        expectedSizes[index],
       );
     });
   });

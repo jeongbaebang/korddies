@@ -1,5 +1,6 @@
 import { ScrollView } from 'react-native';
 import React from 'react';
+
 import EventJoinCard, { EventJoinCardProps } from './EventJoinCard';
 
 type Props = {
@@ -23,5 +24,3 @@ const EventJoinCardList: React.FC<Props> = (props) => {
 };
 
 export default EventJoinCardList;
-
-// const styles = StyleSheet.create({});

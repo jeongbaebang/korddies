@@ -1,5 +1,6 @@
 import { StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
+
 import {
   convertToResponsiveStyle,
   sizeConverter,

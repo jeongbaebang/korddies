@@ -17,11 +17,3 @@ export const CardType01: StoryObj<typeof MissionCard> = {
 export const CardType02: StoryObj<typeof MissionCard> = {
   args: type02,
 };
-
-// export const CardType03: StoryObj<typeof MissionCard> = {
-//   args: type03,
-// };
-
-// export const CardType04: StoryObj<typeof MissionCard> = {
-//   args: type04,
-// };

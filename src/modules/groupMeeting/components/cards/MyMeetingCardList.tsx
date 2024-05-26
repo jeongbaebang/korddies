@@ -1,5 +1,6 @@
 import { ScrollView, StyleSheet } from 'react-native';
 import React from 'react';
+
 import {
   convertToResponsiveStyle,
   sizeConverter,
