@@ -1,4 +1,4 @@
-import { MyMeetingCardProps } from '../components/cards/MyMeetingCard';
+import { MyMeetingCardProps } from '../components/MyMeetings/MyMeetingCard';
 
 export const myMeetingCardType01: MyMeetingCardProps = {
   title: '이수보드게임',

@@ -11,7 +11,7 @@ type Props = {
   rightText: string;
 };
 
-const MyMeetingCardTitle: React.FC<Props> = (props) => {
+const MyMeetingsHeader: React.FC<Props> = (props) => {
   const { font } = {
     font: {
       left: {
@@ -38,7 +38,7 @@ const MyMeetingCardTitle: React.FC<Props> = (props) => {
   );
 };
 
-export default MyMeetingCardTitle;
+export default MyMeetingsHeader;
 
 const styles = StyleSheet.create({
   contentContainer: {

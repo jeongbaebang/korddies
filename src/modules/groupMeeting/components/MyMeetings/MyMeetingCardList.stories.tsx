@@ -10,7 +10,7 @@ import {
 } from '@modules/groupMeeting/mock/myMeetingCardItems';
 
 const StoryComponent: Meta<typeof Component> = {
-  title: 'modules/groupMeeting/cards/MyMeetingCardList',
+  title: 'modules/groupMeeting/myMeeting/MyMeetingCardList',
   component: Component,
 };
 

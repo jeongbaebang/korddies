@@ -4,7 +4,7 @@ import Component from './MyMeetingCard';
 import { myMeetingCardType01 } from '@modules/groupMeeting/mock/myMeetingCardItems';
 
 const StoryComponent: Meta<typeof Component> = {
-  title: 'modules/groupMeeting/cards/MyMeetingCard',
+  title: 'modules/groupMeeting/myMeeting/MyMeetingCard',
   component: Component,
 };
 
