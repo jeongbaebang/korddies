@@ -10,7 +10,7 @@ type Props = {
   text: string;
 };
 
-const MissionEventTitle: React.FC<Props> = (props) => {
+const MissionEventHeader: React.FC<Props> = (props) => {
   const { title } = {
     title: {
       font: {
@@ -27,7 +27,7 @@ const MissionEventTitle: React.FC<Props> = (props) => {
   );
 };
 
-export default MissionEventTitle;
+export default MissionEventHeader;
 
 const styles = StyleSheet.create({
   container: convertToResponsiveStyle({
