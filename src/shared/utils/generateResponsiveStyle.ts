@@ -31,6 +31,10 @@ type CombinedStyle = {
       : never;
 };
 
+type StyleKeysCheck<T> = {
+  [K in keyof T]: K extends CombinedStyleKeys ? T[K] : never;
+};
+
 type CalculatedStyle = {
   [Key in string]: string | number;
 };
@@ -55,7 +59,7 @@ const responsiveStyleAdapter = (
     return calculatedStyle;
   };
 
-  return <T extends Partial<CombinedStyle>>(style: T) => {
+  return <T extends Partial<CombinedStyle>>(style: StyleKeysCheck<T>) => {
     return Object.entries(style).reduce(transformStyleProperty, {});
   };
 };
