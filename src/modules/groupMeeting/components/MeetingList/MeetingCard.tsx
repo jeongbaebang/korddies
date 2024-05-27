@@ -21,7 +21,7 @@ type Props = {
  * 이벤트 정보 표시 컴포넌트
  * 제목, 설명, 시간, 인원수
  */
-const EventJoinCard: React.FC<Props> = ({ leftContent, rightContent }) => {
+const MeetingCard: React.FC<Props> = ({ leftContent, rightContent }) => {
   const { border } = {
     border: {
       borderColor: '#E6E6EA',
@@ -176,5 +176,5 @@ const rightStyles = StyleSheet.create({
   },
 });
 
-export default EventJoinCard;
-export type { Props as EventJoinCardProps };
+export default MeetingCard;
+export type { Props as MeetingCardProps };

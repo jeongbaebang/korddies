@@ -1,6 +1,6 @@
-import type { EventJoinCardProps } from '../components/cards/EventJoinCard';
+import { MeetingCardProps } from '../components/MeetingList';
 
-export const mockEventJoinCard: EventJoinCardProps = {
+export const mockMeetingCard: MeetingCardProps = {
   leftContent: { month: `5월`, day: '14' },
   rightContent: {
     title: `Wearing Hanbok and Take Snapshots`,

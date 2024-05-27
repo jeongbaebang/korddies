@@ -1,18 +1,18 @@
 import { ScrollView } from 'react-native';
 import React from 'react';
 
-import EventJoinCard, { EventJoinCardProps } from './EventJoinCard';
+import MeetingCard, { MeetingCardProps } from './MeetingCard';
 
 type Props = {
-  data: EventJoinCardProps[];
+  data: MeetingCardProps[];
 };
 
-const EventJoinCardList: React.FC<Props> = (props) => {
+const MeetingCardList: React.FC<Props> = (props) => {
   return (
     <ScrollView>
       {props.data.map((item, index) => {
         return (
-          <EventJoinCard
+          <MeetingCard
             key={index}
             leftContent={item.leftContent}
             rightContent={item.rightContent}
@@ -23,4 +23,4 @@ const EventJoinCardList: React.FC<Props> = (props) => {
   );
 };
 
-export default EventJoinCardList;
+export default MeetingCardList;
