@@ -15,13 +15,7 @@ import {
 } from '@shared/components/Icons';
 import GroupMeetingStack from '@navigation/GroupMeetingStack';
 import { sizeConverter } from '@shared/constants/designSystem';
-
-type BottomTabParamList = {
-  [ScreenNames.GROUP_MEETING_STACK]: undefined;
-  [ScreenNames.MOMENTS]: undefined;
-  [ScreenNames.CHAT]: undefined;
-  [ScreenNames.MY_PROFILE]: undefined;
-};
+import { BottomTabParamList } from '@navigation/types';
 
 const Tab = createBottomTabNavigator<BottomTabParamList>();
 

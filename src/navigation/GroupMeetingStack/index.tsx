@@ -6,13 +6,9 @@ import { ScreenNames } from '@navigation/screenNames';
 import GroupMeetingDetailScreen from '@modules/groupMeeting/screens/GroupMeetingDetailScreen';
 import GroupMeetingScreen from '@modules/groupMeeting/screens/GroupMeetingScreen';
 import GroupMeetingScreenHeader from '@modules/groupMeeting/screens/sections/ScreenHeader';
+import type { GroupMeetingStackParamList } from '@navigation/types';
 
-export type NativeStackParamList = {
-  [ScreenNames.GROUP_MEETING]: undefined;
-  [ScreenNames.GROUP_MEETING_DETAIL]: undefined;
-};
-
-const Stack = createNativeStackNavigator<NativeStackParamList>();
+const Stack = createNativeStackNavigator<GroupMeetingStackParamList>();
 
 const options: Record<string, NativeStackNavigationOptions> = {
   [ScreenNames.GROUP_MEETING]: {

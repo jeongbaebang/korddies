@@ -11,13 +11,11 @@ import type { NativeStackNavigationOptions } from '@react-navigation/native-stac
 
 import { ScreenNames } from '@navigation/screenNames';
 import BottomTabs from '@navigation/BottomTabs';
+import type { RootStackParamList } from './types';
 
-export type NativeStackParamList = {
-  [ScreenNames.WITH_BOTTOM_TABS]: undefined;
-};
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const Stack = createNativeStackNavigator<NativeStackParamList>();
-
+// TODO: 파일 분리
 const navigationTheme: { [Key in 'dark' | 'light']: Theme } = {
   dark: {
     ...DarkTheme,
