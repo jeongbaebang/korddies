@@ -13,6 +13,14 @@ type Props = {
   RightContent: () => React.JSX.Element;
 };
 
+/**
+ * [LeftContent]
+ * 미션 이벤트 정보 표시 컴포넌트
+ * 제목, 설명, 시간
+ *
+ * [RightContent]
+ * 이미지 or SVG 컴포넌트
+ */
 const MissionCard: React.FC<Props> = ({
   backgroundColor,
   fullWidth,
