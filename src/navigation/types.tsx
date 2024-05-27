@@ -45,6 +45,11 @@ export type GroupMeetingStackScreenProps<
   HomeTabScreenProps<keyof BottomTabParamList>
 >;
 
+// 모든 네비게이션 파라미터를 포함하는 유틸리티 타입 정의
+export type AllParamList = RootStackParamList &
+  BottomTabParamList &
+  GroupMeetingStackParamList;
+
 // 글로벌 네비게이션 타입 확장
 declare global {
   namespace ReactNavigation {
