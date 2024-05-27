@@ -7,7 +7,12 @@ import { ScreenNames } from '@navigation/screenNames';
 import MomentsScreen from '@modules/moments/screens/MomentsScreen';
 import ChatScreen from '@modules/chat/screens/ChatScreen';
 import ProfileScreen from '@modules/profile/screens/ProfileScreen';
-import { HouseIcon } from '@shared/components/Icons';
+import {
+  HouseIcon,
+  PaperPlaneIcon,
+  CommentDotsIcon,
+  CircleUserIcon,
+} from '@shared/components/Icons';
 import GroupMeetingStack from '@navigation/GroupMeetingStack';
 
 type BottomTabParamList = {
@@ -26,12 +31,21 @@ const options: Record<string, BottomTabNavigationOptions> = {
   },
   [ScreenNames.MOMENTS]: {
     tabBarLabel: '모멘츠',
+    tabBarIcon: ({ color, size }) => (
+      <PaperPlaneIcon color={color} size={size} />
+    ),
   },
   [ScreenNames.CHAT]: {
     tabBarLabel: '채팅',
+    tabBarIcon: ({ color, size }) => (
+      <CommentDotsIcon color={color} size={size} />
+    ),
   },
   [ScreenNames.MY_PROFILE]: {
     tabBarLabel: '내 프로필',
+    tabBarIcon: ({ color, size }) => (
+      <CircleUserIcon color={color} size={size} />
+    ),
   },
   TabNavigator: {
     headerShown: false,
