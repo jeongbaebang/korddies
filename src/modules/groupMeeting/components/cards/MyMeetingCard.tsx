@@ -7,7 +7,10 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import { convertToResponsiveStyle } from '@shared/constants/designSystem';
+import {
+  convertToResponsiveStyle,
+  sizeConverter,
+} from '@shared/constants/designSystem';
 
 type Props = {
   uri: string;
@@ -23,7 +26,7 @@ const MyMeetingCard: React.FC<Props> = (props) => {
     },
     font: {
       color: '#FFFFFF',
-      fontSize: 11,
+      fontSize: sizeConverter(11),
       fontWeight: 'bold',
     } as TextStyle,
   };
