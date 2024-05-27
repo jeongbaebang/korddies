@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MissionCardProps } from '../components/cards/MissionCard';
+import { MissionCardProps } from '../components/MissionEventList/MissionCard';
 import KoreanManWoman from '../assets/KoreanManWoman';
 import BathingPeople from '../assets/BathingPeople';
 

@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Component from './MissionEventTitle';
+import Component from './MissionEventHeader';
 
 const StoryComponent: Meta<typeof Component> = {
-  title: 'modules/groupMeeting/cards/MissionEventTitle',
+  title: 'modules/groupMeeting/missionEvent/MissionEventHeader',
   component: Component,
 };
 

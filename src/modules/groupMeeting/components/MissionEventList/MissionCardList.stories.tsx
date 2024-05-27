@@ -4,7 +4,7 @@ import MissionCardList from './MissionCardList';
 import { type01, type02 } from '@modules/groupMeeting/mock/missionCardItems';
 
 const StoryComponent: Meta<typeof MissionCardList> = {
-  title: 'modules/groupMeeting/cards/MissionCardList',
+  title: 'modules/groupMeeting/missionEvent/MissionCardList',
   component: MissionCardList,
 };
 
