@@ -14,6 +14,7 @@ import {
   CircleUserIcon,
 } from '@shared/components/Icons';
 import GroupMeetingStack from '@navigation/GroupMeetingStack';
+import { sizeConverter } from '@shared/constants/designSystem';
 
 type BottomTabParamList = {
   [ScreenNames.GROUP_MEETING_STACK]: undefined;
@@ -48,6 +49,7 @@ const options: Record<string, BottomTabNavigationOptions> = {
     ),
   },
   TabNavigator: {
+    tabBarActiveTintColor: '#1B1A57',
     headerShown: false,
     headerShadowVisible: false,
     tabBarStyle: {
@@ -64,7 +66,7 @@ const BottomTabs = () => {
   return (
     <Tab.Navigator
       safeAreaInsets={Platform.select({
-        android: { bottom: 10 },
+        android: { bottom: sizeConverter(10) },
       })}
       initialRouteName={ScreenNames.GROUP_MEETING_STACK}
       screenOptions={options.TabNavigator}>
