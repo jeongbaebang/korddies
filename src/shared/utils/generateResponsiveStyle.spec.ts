@@ -1,4 +1,4 @@
-import { PixelRatio } from 'react-native';
+import { PixelRatio, TextStyle, ViewStyle } from 'react-native';
 import {
   responsiveStyleAdapter,
   generateResponsiveStyle,
@@ -25,7 +25,6 @@ describe('styleCalculator Function', () => {
   test('기준너비보다 큰 디바이스는 큰 크기로 계산되어야 한다.', () => {
     const deviceWidth = 400;
     const referenceWidth = 393;
-
     const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
     const expectedSizes = [10, 51, 102, 204, 306, 407, 1018];
 
@@ -39,7 +38,6 @@ describe('styleCalculator Function', () => {
   test('기준너비보다 작은 디바이스는 작은 크기로 계산되어야 한다.', () => {
     const deviceWidth = 280;
     const referenceWidth = 393;
-
     const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
     const expectedSizes = [7, 36, 71, 143, 214, 285, 713];
 
@@ -53,7 +51,6 @@ describe('styleCalculator Function', () => {
   test('기준너비와 동일한 디바이스는 동일한 크기값을 반환해야 한다.', () => {
     const deviceWidth = 393;
     const referenceWidth = 393;
-
     const targetSizes = [10, 50, 100, 200, 300, 400, 1000];
     const expectedSizes = [10, 50, 100, 200, 300, 400, 1000];
 
@@ -151,6 +148,33 @@ describe('applyRelativeSizes Function', () => {
       paddingHorizontal: testCore(16),
       paddingVertical: testCore(8),
       backgroundColor: 'purple',
+    });
+  });
+
+  test('옵션에 전달된 key값 형태의 문자열은 계산되지 말아야 한다.', () => {
+    const options: (keyof TextStyle | keyof ViewStyle)[] = [
+      'flex',
+      'borderRadius',
+      'paddingHorizontal',
+      'paddingVertical',
+    ];
+    const sizeConverter = responsiveStyleAdapter(
+      relativeSizeConverter,
+      options,
+    );
+
+    expect(
+      sizeConverter({
+        flex: 100,
+        borderRadius: 8,
+        paddingHorizontal: 16,
+        paddingVertical: 8,
+      }),
+    ).toStrictEqual({
+      flex: 100,
+      borderRadius: 8,
+      paddingHorizontal: 16,
+      paddingVertical: 8,
     });
   });
 });

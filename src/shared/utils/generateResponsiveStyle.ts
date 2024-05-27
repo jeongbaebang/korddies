@@ -1,4 +1,4 @@
-import { PixelRatio } from 'react-native';
+import { PixelRatio, TextStyle, ViewStyle } from 'react-native';
 import { is, curry, __ } from 'ramda';
 import { Cache } from './cache';
 
@@ -11,38 +11,52 @@ const generateResponsiveStyle = (
   computeCore: ComputeCoreFn = defaultComputeCore,
 ) => {
   const cache = new Cache<number, number>();
-
-  return (targetSize: number) => {
+  const converter = (targetSize: number): number => {
     return cache.calculate(
       is(Number, targetSize) ? targetSize : 0,
       curry(computeCore)(__, currentDeviceWidth, referenceDeviceWidth),
     );
   };
+
+  return converter;
+};
+
+type CombinedStyleKeys = keyof TextStyle | keyof ViewStyle;
+
+type CombinedStyle = {
+  [Key in CombinedStyleKeys]: Key extends keyof TextStyle
+    ? TextStyle[Key]
+    : Key extends keyof ViewStyle
+      ? ViewStyle[Key]
+      : never;
 };
 
 type CalculatedStyle = {
-  [Key in string]: string | number | any;
+  [Key in string]: string | number;
 };
 
 /**
  * @see https://github.com/jeongbaebang/korddies/wiki/Docs#responsiveStyleAdapter
  */
-const responsiveStyleAdapter = (converter: (targetSize: number) => number) => {
+const responsiveStyleAdapter = (
+  converter: (targetSize: number) => number,
+  options: CombinedStyleKeys[] = ['flex'],
+) => {
   const transformStyleProperty = (
     calculatedStyle: CalculatedStyle,
-    [styleKey, styleValue]: [string, string | number],
+    [styleKey, styleValue]: any[],
   ) => {
-    if (is(Number, styleValue)) {
-      calculatedStyle[styleKey] = converter(styleValue);
-    } else {
+    if (options.includes(styleKey) || !is(Number, styleValue)) {
       calculatedStyle[styleKey] = styleValue;
+    } else {
+      calculatedStyle[styleKey] = converter(styleValue);
     }
 
     return calculatedStyle;
   };
 
-  return <T extends CalculatedStyle>(style: T) => {
-    return Object.entries(style).reduce(transformStyleProperty, {}) as T;
+  return <T extends Partial<CombinedStyle>>(style: T) => {
+    return Object.entries(style).reduce(transformStyleProperty, {});
   };
 };
 
