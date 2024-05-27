@@ -18,27 +18,34 @@ type Props = {
 };
 
 const MyMeetingCard: React.FC<Props> = (props) => {
-  const { color, font } = {
-    color: {
-      backgroundColor: 'rgba(0, 0, 0, 0.30)',
-      shadowColor: 'rgba(0, 0, 0, 0.250980406999588)',
-      elevation: props.uri ? 18 : undefined,
+  const { container, title } = {
+    container: {
+      color: {
+        backgroundColor: '#000000',
+        shadowColor: 'rgba(0, 0, 0, 0.250980406999588)',
+        elevation: props.uri ? 18 : 0,
+      },
     },
-    font: {
-      color: '#FFFFFF',
-      fontSize: sizeConverter(11),
-      fontWeight: 'bold',
-    } as TextStyle,
+    title: {
+      font: {
+        color: '#FFFFFF',
+        fontSize: sizeConverter(11),
+        fontWeight: 'bold',
+      } as TextStyle,
+      options: {
+        maxLine: 2,
+      },
+    },
   };
 
   return (
-    <View style={[styles.container, color]}>
+    <View style={[styles.container, container.color]}>
       <ImageBackground
         source={{ uri: props.uri }}
         style={styles.image}
         resizeMode="cover">
         <View style={styles.textContainer}>
-          <Text style={font} numberOfLines={2}>
+          <Text style={title.font} numberOfLines={title.options.maxLine}>
             {props.title}
           </Text>
         </View>

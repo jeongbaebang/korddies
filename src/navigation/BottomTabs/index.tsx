@@ -28,25 +28,27 @@ const Tab = createBottomTabNavigator<BottomTabParamList>();
 const options: Record<string, BottomTabNavigationOptions> = {
   [ScreenNames.GROUP_MEETING_STACK]: {
     tabBarLabel: '홈',
-    tabBarIcon: ({ color, size }) => <HouseIcon color={color} size={size} />,
+    tabBarIcon: ({ color, size }) => {
+      return <HouseIcon color={color} size={size} />;
+    },
   },
   [ScreenNames.MOMENTS]: {
     tabBarLabel: '모멘츠',
-    tabBarIcon: ({ color, size }) => (
-      <PaperPlaneIcon color={color} size={size} />
-    ),
+    tabBarIcon: ({ color, size }) => {
+      return <PaperPlaneIcon color={color} size={size} />;
+    },
   },
   [ScreenNames.CHAT]: {
     tabBarLabel: '채팅',
-    tabBarIcon: ({ color, size }) => (
-      <CommentDotsIcon color={color} size={size} />
-    ),
+    tabBarIcon: ({ color, size }) => {
+      return <CommentDotsIcon color={color} size={size} />;
+    },
   },
   [ScreenNames.MY_PROFILE]: {
     tabBarLabel: '내 프로필',
-    tabBarIcon: ({ color, size }) => (
-      <CircleUserIcon color={color} size={size} />
-    ),
+    tabBarIcon: ({ color, size }) => {
+      return <CircleUserIcon color={color} size={size} />;
+    },
   },
   TabNavigator: {
     tabBarActiveTintColor: '#1B1A57',
