@@ -34,5 +34,6 @@ const styles = StyleSheet.create({
     gap: 8,
     height: 123,
     paddingHorizontal: 20,
+    alignItemsㅁㄴㅇㄹ: 'baseline',
   }),
 });

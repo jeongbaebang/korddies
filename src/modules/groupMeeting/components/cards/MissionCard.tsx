@@ -116,12 +116,12 @@ const styles = StyleSheet.create({
 });
 
 const leftStyles = StyleSheet.create({
-  container: {
+  container: convertToResponsiveStyle({
     flex: 1,
     justifyContent: 'space-between',
-    marginLeft: sizeConverter(14),
-    marginVertical: sizeConverter(19),
-  },
+    marginLeft: 14,
+    marginVertical: 19,
+  }),
   dateContainer: convertToResponsiveStyle({
     alignItems: 'center',
     borderRadius: 4,

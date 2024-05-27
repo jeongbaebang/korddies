@@ -159,11 +159,11 @@ const leftStyles = StyleSheet.create({
 });
 
 const rightStyles = StyleSheet.create({
-  container: {
+  container: convertToResponsiveStyle({
     flex: 1,
     justifyContent: 'space-between',
-    minHeight: sizeConverter(60),
-  },
+    minHeight: 60,
+  }),
   infoContainer: convertToResponsiveStyle({
     flexDirection: 'row',
     gap: 15,

@@ -7,10 +7,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import {
-  sizeConverter,
-  convertToResponsiveStyle,
-} from '@shared/constants/designSystem';
+import { convertToResponsiveStyle } from '@shared/constants/designSystem';
 
 type Props = {
   uri: string;
@@ -56,13 +53,13 @@ const styles = StyleSheet.create({
     shadowRadius: 10,
     width: 80,
   }),
-  image: {
-    borderRadius: sizeConverter(10),
+  image: convertToResponsiveStyle({
+    borderRadius: 10,
     flex: 1,
     justifyContent: 'flex-end',
     overflow: 'hidden',
-    padding: sizeConverter(9),
-  },
+    padding: 9,
+  }),
   textContainer: {
     alignItems: 'center',
     justifyContent: 'center',
