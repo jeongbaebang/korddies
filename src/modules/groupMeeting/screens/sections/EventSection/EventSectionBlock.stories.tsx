@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Component from './EventSectionBlock';
+import { EventSectionBlock as Component } from './EventSectionBlock';
 import { MissionCard } from '@modules/groupMeeting/components/MissionEventList';
 import {
   MissionCardType,

@@ -3,7 +3,7 @@ import React from 'react';
 
 import { GroupMeetingStackScreenProps } from '@navigation/types';
 import { ScreenNames } from '@navigation/screenNames';
-import { EventDetailSection } from './sections/EventSectionBlock';
+import { EventDetailSection } from './sections/EventSection/EventSectionBlock';
 import GroupMeetingScreenHeader from './sections/ScreenHeader';
 import MeetingListSectionBlock from './sections/MeetingListSectionBlock';
 

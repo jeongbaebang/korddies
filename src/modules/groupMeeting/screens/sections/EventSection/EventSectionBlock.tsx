@@ -41,5 +41,4 @@ const EventDetailSection: React.FC<{ type: MissionCardNames }> = (props) => {
   );
 };
 
-export default EventSectionBlock;
-export { EventDetailSection };
+export { EventSectionBlock, EventDetailSection };
