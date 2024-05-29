@@ -1,10 +1,15 @@
 import { StyleSheet, ScrollView, View } from 'react-native';
 import React from 'react';
 
-import EventListSection from './sections/EventListSection';
+import EventSectionBlock from './sections/EventSectionBlock';
 import MyMeetingsSection from './sections/MyMeetingsSection';
-import MeetingListSection from './sections/MeetingListSection';
 import GroupMeetingScreenHeader from './sections/ScreenHeader';
+import {
+  MissionCardType,
+  missionCardHeaderTitleMap,
+} from '../assets/content/missionEventItems';
+import { LinkMissionCard } from '../components/MissionEventList/MissionCard';
+import MeetingListSectionBlock from './sections/MeetingListSectionBlock';
 
 const GroupMeetingScreen = () => {
   return (
@@ -13,9 +18,19 @@ const GroupMeetingScreen = () => {
       <ScrollView>
         <EventListSection />
         <MyMeetingsSection />
-        <MeetingListSection />
+        <MeetingListSectionBlock />
       </ScrollView>
     </View>
+  );
+};
+
+const EventListSection = () => {
+  return (
+    <EventSectionBlock
+      headerTitle={missionCardHeaderTitleMap[MissionCardType.HOME]}
+      cardKeys={[MissionCardType.KYUNGBOK, MissionCardType.KOREA_SPA]}
+      RenderItem={LinkMissionCard}
+    />
   );
 };
 

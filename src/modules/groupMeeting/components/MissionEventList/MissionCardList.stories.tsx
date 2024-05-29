@@ -14,6 +14,6 @@ export default StoryComponent;
 export const Basic: StoryObj<typeof MissionCardList> = {
   args: {
     data: [MissionCardType.KYUNGBOK, MissionCardType.KOREA_SPA],
-    ItemComponent: MissionCard,
+    CardItem: MissionCard,
   },
 };

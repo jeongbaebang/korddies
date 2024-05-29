@@ -4,7 +4,7 @@ import React from 'react';
 import { MeetingCardList } from '@modules/groupMeeting/components/MeetingList';
 import { mockMeetingCard } from '@modules/groupMeeting/mock/meetingCardItems';
 
-const MeetingListSection = () => {
+const MeetingListSectionBlock = () => {
   const { payload } = {
     payload: [
       mockMeetingCard,
@@ -24,4 +24,4 @@ const MeetingListSection = () => {
   );
 };
 
-export default MeetingListSection;
+export default MeetingListSectionBlock;

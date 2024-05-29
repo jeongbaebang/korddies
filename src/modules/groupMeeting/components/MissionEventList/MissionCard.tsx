@@ -5,6 +5,9 @@ import {
   convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
+import { LinkMissionCardProps } from './MissionCardList';
+import Link from '@shared/components/Link';
+import { ScreenNames } from '@navigation/screenNames';
 
 type Props = {
   backgroundColor: string;
@@ -105,6 +108,16 @@ const MissionCardFullWidth: React.FC<Props> = (props) => {
   );
 };
 
+const LinkMissionCard = (props: LinkMissionCardProps) => {
+  const LinkToEventDetailScreen = Link(
+    MissionCard,
+    ScreenNames.GROUP_MEETING_EVENT_DETAIL,
+    { cardType: props.cardType },
+  );
+
+  return <LinkToEventDetailScreen {...props} />;
+};
+
 const styles = StyleSheet.create({
   contentContainer: {
     flexDirection: 'row',
@@ -151,4 +164,4 @@ const rightStyles = StyleSheet.create({
 
 export default MissionCard;
 export type { Props as MissionCardProps };
-export { MissionCardFullWidth };
+export { MissionCardFullWidth, LinkMissionCard };

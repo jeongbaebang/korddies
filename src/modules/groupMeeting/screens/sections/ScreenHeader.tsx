@@ -70,12 +70,11 @@ const LeftActionButton = ({ onPress }: { onPress?: OnBackPress }) => {
     size: sizeConverter(20),
     color: '#1B1A57',
     Icon: ChevronLeftIcon,
-    onPress: onPress,
   };
 
   return (
     <View style={styles.leftActionContainer}>
-      <ActionButton {...options} />
+      <ActionButton onPress={onPress} {...options} />
     </View>
   );
 };

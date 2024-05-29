@@ -17,10 +17,10 @@ type ItemComponentProps = MissionCardProps & {
 
 type Props = {
   data: MissionCardNames[];
-  ItemComponent: ComponentType<ItemComponentProps>;
+  CardItem: ComponentType<ItemComponentProps>;
 };
 
-const MissionCardList: React.FC<Props> = ({ ItemComponent, data }) => {
+const MissionCardList: React.FC<Props> = ({ CardItem, data }) => {
   return (
     <ScrollView
       horizontal
@@ -29,9 +29,7 @@ const MissionCardList: React.FC<Props> = ({ ItemComponent, data }) => {
       snapToInterval={sizeConverter(258)}
       decelerationRate="fast">
       {data.map((item, index) => {
-        return (
-          <ItemComponent key={index} {...generateMissionCardProps(item)} />
-        );
+        return <CardItem key={index} {...generateMissionCardProps(item)} />;
       })}
     </ScrollView>
   );
