@@ -9,6 +9,7 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons/faCirclePlus';
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons/faPaperPlane';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons/faCommentDots';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons/faCircleUser';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
 
 export enum IconType {
   House,
@@ -20,7 +21,9 @@ export enum IconType {
   PaperPlane,
   CommentDots,
   CircleUser,
+  ChevronLeft,
 }
+
 export type IconProps = Omit<Props, 'icon'> & { focused?: boolean };
 
 const iconMap: Record<IconType, React.ReactElement> = {
@@ -33,6 +36,7 @@ const iconMap: Record<IconType, React.ReactElement> = {
   [IconType.PaperPlane]: <FontAwesomeIcon icon={faPaperPlane} />,
   [IconType.CommentDots]: <FontAwesomeIcon icon={faCommentDots} />,
   [IconType.CircleUser]: <FontAwesomeIcon icon={faCircleUser} />,
+  [IconType.ChevronLeft]: <FontAwesomeIcon icon={faChevronLeft} />,
 };
 
 export const HouseIcon = (props: IconProps) => {
@@ -69,6 +73,10 @@ export const CommentDotsIcon = (props: IconProps) => {
 
 export const CircleUserIcon = (props: IconProps) => {
   return <Icon type={IconType.CircleUser} {...props} />;
+};
+
+export const ChevronLeftIcon = (props: IconProps) => {
+  return <Icon type={IconType.ChevronLeft} {...props} />;
 };
 
 type DynamicIconProps = IconProps & {

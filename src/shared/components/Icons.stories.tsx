@@ -64,3 +64,9 @@ export const CircleUser: StoryObj<typeof Icon> = {
     type: IconType.CircleUser,
   },
 };
+
+export const ChevronLeft: StoryObj<typeof Icon> = {
+  args: {
+    type: IconType.ChevronLeft,
+  },
+};
