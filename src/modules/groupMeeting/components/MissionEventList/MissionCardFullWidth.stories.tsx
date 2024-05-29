@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { MissionCardFullWidth } from './MissionCard';
-import { type01, type02 } from '@modules/groupMeeting/mock/missionCardItems';
+import {
+  MissionCardType,
+  missionCardItemMap,
+} from '@modules/groupMeeting/assets/content/missionEventItems';
 
 const StoryComponent: Meta<typeof MissionCardFullWidth> = {
   title: 'modules/groupMeeting/missionEvent/MissionCard',
@@ -11,9 +14,9 @@ const StoryComponent: Meta<typeof MissionCardFullWidth> = {
 export default StoryComponent;
 
 export const CardType03: StoryObj<typeof MissionCardFullWidth> = {
-  args: type01,
+  args: missionCardItemMap[MissionCardType.KYUNGBOK],
 };
 
 export const CardType04: StoryObj<typeof MissionCardFullWidth> = {
-  args: type02,
+  args: missionCardItemMap[MissionCardType.KOREA_SPA],
 };

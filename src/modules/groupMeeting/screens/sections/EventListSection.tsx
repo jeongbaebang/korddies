@@ -2,23 +2,53 @@ import { View } from 'react-native';
 import React from 'react';
 
 import {
+  LinkMissionCardProps,
+  MissionCard,
+  MissionCardFullWidth,
   MissionCardList,
   MissionEventHeader,
 } from '@modules/groupMeeting/components/MissionEventList';
-import { type01, type02 } from '@modules/groupMeeting/mock/missionCardItems';
+import { ScreenNames } from '@navigation/screenNames';
+import Link from '@shared/components/Link';
+import {
+  MissionCardNames,
+  MissionCardType,
+  missionCardHeaderTitleMap,
+  missionCardItemMap,
+} from '@modules/groupMeeting/assets/content/missionEventItems';
 
 const EventListSection = () => {
-  const { headerTitle, payload } = {
-    headerTitle: '먼저 코디즈 미션 이벤트를 참여해볼까요?',
-    payload: [type01, type02],
-  };
-
   return (
     <View>
-      <MissionEventHeader text={headerTitle} />
-      <MissionCardList data={payload} />
+      <MissionEventHeader
+        text={missionCardHeaderTitleMap[MissionCardType.HOME]}
+      />
+      <MissionCardList
+        data={[MissionCardType.KYUNGBOK, MissionCardType.KOREA_SPA]}
+        ItemComponent={LinkMissionCard}
+      />
     </View>
   );
 };
 
+const EventDetailSection: React.FC<{ type: MissionCardNames }> = (props) => {
+  return (
+    <View>
+      <MissionEventHeader text={missionCardHeaderTitleMap[props.type]} />
+      <MissionCardFullWidth {...missionCardItemMap[props.type]} />
+    </View>
+  );
+};
+
+const LinkMissionCard = (props: LinkMissionCardProps) => {
+  const LinkToEventDetailScreen = Link(
+    MissionCard,
+    ScreenNames.GROUP_MEETING_EVENT_DETAIL,
+    { cardType: props.cardType },
+  );
+
+  return <LinkToEventDetailScreen {...props} />;
+};
+
 export default EventListSection;
+export { EventDetailSection };

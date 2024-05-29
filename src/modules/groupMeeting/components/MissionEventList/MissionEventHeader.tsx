@@ -31,7 +31,7 @@ export default MissionEventHeader;
 
 const styles = StyleSheet.create({
   container: convertToResponsiveStyle({
-    height: 31,
+    minHeight: 31,
     justifyContent: 'center',
     paddingHorizontal: 20,
   }),

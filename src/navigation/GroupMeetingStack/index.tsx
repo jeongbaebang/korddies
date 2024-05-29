@@ -5,18 +5,17 @@ import type { NativeStackNavigationOptions } from '@react-navigation/native-stac
 import { ScreenNames } from '@navigation/screenNames';
 import GroupMeetingDetailScreen from '@modules/groupMeeting/screens/GroupMeetingDetailScreen';
 import GroupMeetingScreen from '@modules/groupMeeting/screens/GroupMeetingScreen';
-import GroupMeetingScreenHeader from '@modules/groupMeeting/screens/sections/ScreenHeader';
 import type { GroupMeetingStackParamList } from '@navigation/types';
+import GroupMeetingEventDetailScreen from '@modules/groupMeeting/screens/GroupMeetingEventDetailScreen';
 
 const Stack = createNativeStackNavigator<GroupMeetingStackParamList>();
 
 const options: Record<string, NativeStackNavigationOptions> = {
-  [ScreenNames.GROUP_MEETING]: {
-    header: GroupMeetingScreenHeader,
-  },
+  [ScreenNames.GROUP_MEETING]: {},
   [ScreenNames.GROUP_MEETING_DETAIL]: {},
+  [ScreenNames.GROUP_MEETING_EVENT_DETAIL]: {},
   StackNavigator: {
-    headerShadowVisible: false,
+    headerShown: false,
   },
 };
 
@@ -32,6 +31,11 @@ const GroupMeetingStack = () => {
         name={ScreenNames.GROUP_MEETING_DETAIL}
         component={GroupMeetingDetailScreen}
         options={options[ScreenNames.GROUP_MEETING_DETAIL]}
+      />
+      <Stack.Screen
+        name={ScreenNames.GROUP_MEETING_EVENT_DETAIL}
+        component={GroupMeetingEventDetailScreen}
+        options={options[ScreenNames.GROUP_MEETING_EVENT_DETAIL]}
       />
     </Stack.Navigator>
   );

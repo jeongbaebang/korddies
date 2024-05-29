@@ -4,4 +4,7 @@ export {
   type MissionCardProps,
 } from './MissionCard';
 export { default as MissionEventHeader } from './MissionEventHeader';
-export { default as MissionCardList } from './MissionCardList';
+export {
+  default as MissionCardList,
+  type LinkMissionCardProps,
+} from './MissionCardList';

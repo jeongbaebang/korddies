@@ -5,7 +5,8 @@ import type {
 import type { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
 import type { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { ScreenNames } from './screenNames';
+import type { ScreenNames } from './screenNames';
+import type { MissionCardNames } from '@modules/groupMeeting/assets/content/missionEventItems';
 
 // RootStackParamList 정의
 export type RootStackParamList = {
@@ -20,6 +21,9 @@ export type RootStackScreenProps<T extends keyof RootStackParamList> =
 export type GroupMeetingStackParamList = {
   [ScreenNames.GROUP_MEETING]: undefined;
   [ScreenNames.GROUP_MEETING_DETAIL]: undefined;
+  [ScreenNames.GROUP_MEETING_EVENT_DETAIL]: {
+    cardType: MissionCardNames;
+  };
 };
 
 // BottomTabParamList 정의

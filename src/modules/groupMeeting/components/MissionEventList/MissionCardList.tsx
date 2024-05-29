@@ -1,18 +1,26 @@
 import { ScrollView, StyleSheet } from 'react-native';
-import React from 'react';
+import React, { ComponentType } from 'react';
 
-import type { MissionCardProps } from './MissionCard';
-import MissionCard from './MissionCard';
 import {
   convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
+import {
+  MissionCardNames,
+  missionCardItemMap,
+} from '@modules/groupMeeting/assets/content/missionEventItems';
+import { MissionCardProps } from './MissionCard';
 
-type Props = {
-  data: MissionCardProps[];
+type ItemComponentProps = MissionCardProps & {
+  cardType: MissionCardNames;
 };
 
-const MissionCardList: React.FC<Props> = (props) => {
+type Props = {
+  data: MissionCardNames[];
+  ItemComponent: ComponentType<ItemComponentProps>;
+};
+
+const MissionCardList: React.FC<Props> = ({ ItemComponent, data }) => {
   return (
     <ScrollView
       horizontal
@@ -20,11 +28,22 @@ const MissionCardList: React.FC<Props> = (props) => {
       showsHorizontalScrollIndicator={false}
       snapToInterval={sizeConverter(258)}
       decelerationRate="fast">
-      {props.data.map((item, index) => {
-        return <MissionCard key={index} {...item} />;
+      {data.map((item, index) => {
+        return (
+          <ItemComponent key={index} {...generateMissionCardProps(item)} />
+        );
       })}
     </ScrollView>
   );
+};
+
+const generateMissionCardProps = (
+  cardType: MissionCardNames,
+): ItemComponentProps => {
+  return {
+    ...missionCardItemMap[cardType],
+    cardType: cardType,
+  };
 };
 
 const styles = StyleSheet.create({
@@ -38,3 +57,4 @@ const styles = StyleSheet.create({
 });
 
 export default MissionCardList;
+export type { ItemComponentProps as LinkMissionCardProps };
