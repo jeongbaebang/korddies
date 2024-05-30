@@ -70,3 +70,9 @@ export const ChevronLeft: StoryObj<typeof Icon> = {
     type: IconType.ChevronLeft,
   },
 };
+
+export const LocationDot: StoryObj<typeof Icon> = {
+  args: {
+    type: IconType.LocationDot,
+  },
+};

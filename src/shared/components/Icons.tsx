@@ -10,6 +10,7 @@ import { faPaperPlane } from '@fortawesome/free-solid-svg-icons/faPaperPlane';
 import { faCommentDots } from '@fortawesome/free-solid-svg-icons/faCommentDots';
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons/faCircleUser';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons/faChevronLeft';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons/faLocationDot';
 
 export enum IconType {
   House,
@@ -22,6 +23,7 @@ export enum IconType {
   CommentDots,
   CircleUser,
   ChevronLeft,
+  LocationDot,
 }
 
 export type IconProps = Omit<Props, 'icon'> & { focused?: boolean };
@@ -37,6 +39,7 @@ const iconMap: Record<IconType, React.ReactElement> = {
   [IconType.CommentDots]: <FontAwesomeIcon icon={faCommentDots} />,
   [IconType.CircleUser]: <FontAwesomeIcon icon={faCircleUser} />,
   [IconType.ChevronLeft]: <FontAwesomeIcon icon={faChevronLeft} />,
+  [IconType.LocationDot]: <FontAwesomeIcon icon={faLocationDot} />,
 };
 
 type DynamicIconProps = IconProps & {
