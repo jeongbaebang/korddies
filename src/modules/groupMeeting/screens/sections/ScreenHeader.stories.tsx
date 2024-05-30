@@ -1,15 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import ScreenHeader from './ScreenHeader';
+import Component, { GroupMeetingDetailScreenHeader } from './ScreenHeader';
 
-const StoryComponent: Meta<typeof ScreenHeader> = {
+const StoryComponent: Meta<typeof Component> = {
   title: 'modules/groupMeeting/screen/Header',
-  component: ScreenHeader,
+  component: Component,
   parameters: {
     noSafeArea: true,
+  },
+  argTypes: {
+    onBackPress: { action: 'pressed the backPress button' },
   },
 };
 
 export default StoryComponent;
 
-export const Basic: StoryObj<typeof ScreenHeader> = {};
+export const Basic: StoryObj<typeof Component> = {};
+
+export const DetailScreenHeader: StoryObj<typeof Component> = {
+  decorators: [
+    () => {
+      return <GroupMeetingDetailScreenHeader />;
+    },
+  ],
+};

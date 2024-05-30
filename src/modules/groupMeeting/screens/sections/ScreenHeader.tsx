@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -7,29 +7,40 @@ import {
   sizeConverter,
 } from '@shared/constants/designSystem';
 import { IconType } from '@shared/components/Icons';
-import ActionButton, {
+import ActionIconButton, {
   ActionButtonProps,
 } from '@shared/components/ActionButton';
 
 type OnBackPress = () => void;
-type Props = {
+type HeaderProps = {
   canGoBack?: boolean;
   onBackPress?: OnBackPress;
 };
 
-const GroupMeetingScreenHeader: React.FC<Props> = ({
-  canGoBack,
-  onBackPress,
-}) => {
+const ScreenHeader: React.FC<HeaderProps> = ({ canGoBack, onBackPress }) => {
+  return (
+    <ScreenHeaderLayout>
+      {canGoBack ? <LeftActionButton onPress={onBackPress} /> : null}
+      <HeaderTitle />
+      <RightActionButtons />
+    </ScreenHeaderLayout>
+  );
+};
+
+const DetailScreenHeader: React.FC<HeaderProps> = ({ onBackPress }) => {
+  return (
+    <ScreenHeaderLayout>
+      <LeftActionButton onPress={onBackPress} />
+    </ScreenHeaderLayout>
+  );
+};
+
+const ScreenHeaderLayout: React.FC<PropsWithChildren> = ({ children }) => {
   const insets = useSafeAreaInsets();
 
   return (
     <View style={[{ marginTop: insets.top }, styles.outerContainer]}>
-      <View style={styles.innerContainer}>
-        {canGoBack ? <LeftActionButton onPress={onBackPress} /> : null}
-        <HeaderTitle />
-        <RightActionButtons />
-      </View>
+      <View style={styles.innerContainer}>{children}</View>
     </View>
   );
 };
@@ -65,7 +76,7 @@ const LeftActionButton = ({ onPress }: { onPress?: OnBackPress }) => {
 
   return (
     <View style={styles.leftActionContainer}>
-      <ActionButton onPress={onPress} {...options} />
+      <ActionIconButton onPress={onPress} {...options} />
     </View>
   );
 };
@@ -78,8 +89,8 @@ const RightActionButtons = () => {
 
   return (
     <View style={styles.rightActionContainer}>
-      <ActionButton type={IconType.Search} {...options} />
-      <ActionButton type={IconType.CirclePlus} {...options} />
+      <ActionIconButton type={IconType.Search} {...options} />
+      <ActionIconButton type={IconType.CirclePlus} {...options} />
     </View>
   );
 };
@@ -118,4 +129,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default GroupMeetingScreenHeader;
+export default ScreenHeader;
+export { DetailScreenHeader as GroupMeetingDetailScreenHeader };
