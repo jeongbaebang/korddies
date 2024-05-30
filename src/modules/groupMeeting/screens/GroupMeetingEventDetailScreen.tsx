@@ -5,7 +5,7 @@ import { GroupMeetingStackScreenProps } from '@navigation/types';
 import { ScreenNames } from '@navigation/screenNames';
 import { EventDetailSection } from './sections/EventSection/EventSectionBlock';
 import ScreenHeader from './sections/ScreenHeader';
-import MeetingListSectionBlock from './sections/MeetingListSectionBlock';
+import { MeetingListSection } from './sections/MeetingListSection';
 
 type Props =
   GroupMeetingStackScreenProps<ScreenNames.GROUP_MEETING_EVENT_DETAIL>;
@@ -25,7 +25,7 @@ const GroupMeetingEventDetailScreen: React.FC<Props> = ({
       <ScreenHeader canGoBack onBackPress={onBackPressHandler} />
       <ScrollView style={styles.container}>
         <EventDetailSection type={route.params.cardType} />
-        <MeetingListSectionBlock />
+        <MeetingListSection />
       </ScrollView>
     </View>
   );

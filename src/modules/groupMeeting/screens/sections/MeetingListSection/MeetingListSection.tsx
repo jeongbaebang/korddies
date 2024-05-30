@@ -1,10 +1,12 @@
-import { View } from 'react-native';
 import React from 'react';
 
-import { MeetingCardList } from '@modules/groupMeeting/components/MeetingList';
 import { mockMeetingCard } from '@modules/groupMeeting/mock/meetingCardItems';
+import { MeetingListSectionBlock } from './MeetingListSectionBlock';
 
-const MeetingListSectionBlock = () => {
+/**
+ * SERVER FETCH LAYERS
+ */
+const MeetingListSection = () => {
   const { payload } = {
     payload: [
       mockMeetingCard,
@@ -17,11 +19,7 @@ const MeetingListSectionBlock = () => {
     ],
   };
 
-  return (
-    <View>
-      <MeetingCardList data={payload} />
-    </View>
-  );
+  return <MeetingListSectionBlock payload={payload} />;
 };
 
-export default MeetingListSectionBlock;
+export default MeetingListSection;

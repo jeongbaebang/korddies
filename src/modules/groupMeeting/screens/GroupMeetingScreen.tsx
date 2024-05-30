@@ -3,8 +3,8 @@ import React from 'react';
 
 import MyMeetingsSection from './sections/MyMeetingsSection';
 import ScreenHeader from './sections/ScreenHeader';
-import MeetingListSectionBlock from './sections/MeetingListSectionBlock';
 import { EventListSection } from './sections/EventSection';
+import { MeetingListSection } from './sections/MeetingListSection';
 
 const GroupMeetingScreen = () => {
   return (
@@ -13,7 +13,7 @@ const GroupMeetingScreen = () => {
       <ScrollView>
         <EventListSection />
         <MyMeetingsSection />
-        <MeetingListSectionBlock />
+        <MeetingListSection />
       </ScrollView>
     </View>
   );

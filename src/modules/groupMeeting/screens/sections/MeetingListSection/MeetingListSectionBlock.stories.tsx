@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Component from './MeetingListSectionBlock';
+import { MeetingListSectionBlock as Component } from './MeetingListSectionBlock';
 
 const StoryComponent: Meta<typeof Component> = {
   title: 'modules/groupMeeting/screen/MeetingListSectionBlock',
