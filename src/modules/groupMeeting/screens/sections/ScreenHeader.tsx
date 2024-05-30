@@ -7,9 +7,10 @@ import {
   sizeConverter,
 } from '@shared/constants/designSystem';
 import { IconType } from '@shared/components/Icons';
-import ActionIconButton, {
+import {
   ActionButtonProps,
-} from '@shared/components/ActionButton';
+  ActionIconButton,
+} from '@shared/components/Buttons';
 
 type OnBackPress = () => void;
 type HeaderProps = {

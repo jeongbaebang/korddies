@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import React from 'react';
 
-import { Icon, IconType } from './Icons';
+import { Icon, IconType } from '../Icons';
 import { sizeConverter } from '@shared/constants/designSystem';
 
 type Props = {
