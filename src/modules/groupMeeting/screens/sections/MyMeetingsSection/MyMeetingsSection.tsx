@@ -1,10 +1,5 @@
-import { View } from 'react-native';
 import React from 'react';
 
-import {
-  MyMeetingsHeader,
-  MyMeetingCardList,
-} from '@modules/groupMeeting/components/MyMeetings';
 import {
   myMeetingCardType01,
   myMeetingCardType02,
@@ -12,7 +7,11 @@ import {
   myMeetingCardType04,
   myMeetingCardType05,
 } from '@modules/groupMeeting/mock/myMeetingCardItems';
+import { MyMeetingsSectionBlock } from './MyMeetingsSectionBlock';
 
+/**
+ * SERVER FETCH LAYERS
+ */
 const MyMeetingsSection = () => {
   const { headerTitle, payload } = {
     headerTitle: {
@@ -28,15 +27,7 @@ const MyMeetingsSection = () => {
     ],
   };
 
-  return (
-    <View>
-      <MyMeetingsHeader
-        leftText={headerTitle.left}
-        rightText={headerTitle.right}
-      />
-      <MyMeetingCardList data={payload} />
-    </View>
-  );
+  return <MyMeetingsSectionBlock headerTitle={headerTitle} payload={payload} />;
 };
 
 export default MyMeetingsSection;
