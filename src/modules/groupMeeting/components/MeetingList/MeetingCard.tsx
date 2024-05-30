@@ -1,7 +1,7 @@
 import { StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
 
-import { ClockIcon, UserGroupIcon } from '@shared/components/Icons';
+import { Icon, IconType } from '@shared/components/Icons';
 import {
   sizeConverter,
   convertToResponsiveStyle,
@@ -118,12 +118,20 @@ const RightContent: React.FC<{ data: RightContent }> = ({ data }) => {
       <View style={rightStyles.infoContainer}>
         {/* 이벤트 시간 */}
         <View style={rightStyles.infoContent}>
-          <ClockIcon size={info.icon.size} color={info.icon.color} />
+          <Icon
+            type={IconType.Clock}
+            size={info.icon.size}
+            color={info.icon.color}
+          />
           <Text style={info.font}>{data.info.time}</Text>
         </View>
         {/* 이벤트 인원 */}
         <View style={rightStyles.infoContent}>
-          <UserGroupIcon size={info.icon.size} color={info.icon.color} />
+          <Icon
+            type={IconType.UserGroup}
+            size={info.icon.size}
+            color={info.icon.color}
+          />
           <Text style={info.font}>{data.info.peoples}</Text>
         </View>
       </View>

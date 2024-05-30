@@ -1,24 +1,15 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  StyleProp,
-  ViewStyle,
-} from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import {
   convertToResponsiveStyle,
   sizeConverter,
 } from '@shared/constants/designSystem';
-import {
-  ChevronLeftIcon,
-  CirclePlusIcon,
-  IconProps,
-  SearchIcon,
-} from '@shared/components/Icons';
+import { IconType } from '@shared/components/Icons';
+import ActionButton, {
+  ActionButtonProps,
+} from '@shared/components/ActionButton';
 
 type OnBackPress = () => void;
 type Props = {
@@ -66,10 +57,10 @@ const HeaderTitle = () => {
 };
 
 const LeftActionButton = ({ onPress }: { onPress?: OnBackPress }) => {
-  const options: ButtonProps = {
+  const options: ActionButtonProps = {
     size: sizeConverter(20),
     color: '#1B1A57',
-    Icon: ChevronLeftIcon,
+    type: IconType.ChevronLeft,
   };
 
   return (
@@ -87,41 +78,13 @@ const RightActionButtons = () => {
 
   return (
     <View style={styles.rightActionContainer}>
-      <ActionButton Icon={SearchIcon} {...options} />
-      <ActionButton Icon={CirclePlusIcon} {...options} />
+      <ActionButton type={IconType.Search} {...options} />
+      <ActionButton type={IconType.CirclePlus} {...options} />
     </View>
   );
 };
 
-type ButtonProps = {
-  color: string;
-  Icon: (props: IconProps) => React.JSX.Element;
-  onPress?: () => void;
-  size: number;
-  style?: StyleProp<ViewStyle>;
-};
-
-const ActionButton: React.FC<ButtonProps> = ({
-  Icon,
-  color,
-  size,
-  onPress,
-  style,
-}) => {
-  return (
-    <TouchableOpacity onPress={onPress} style={[styles.actionButton, style]}>
-      <Icon size={size} color={color} />
-    </TouchableOpacity>
-  );
-};
-
 const styles = StyleSheet.create({
-  actionButton: {
-    alignItems: 'center',
-    aspectRatio: 1.0,
-    justifyContent: 'center',
-    width: sizeConverter(24),
-  },
   innerContainer: {
     alignItems: 'center',
     flexDirection: 'row',

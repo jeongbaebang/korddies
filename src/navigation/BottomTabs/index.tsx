@@ -7,12 +7,7 @@ import { ScreenNames } from '@navigation/screenNames';
 import MomentsScreen from '@modules/moments/screens/MomentsScreen';
 import ChatScreen from '@modules/chat/screens/ChatScreen';
 import ProfileScreen from '@modules/profile/screens/ProfileScreen';
-import {
-  HouseIcon,
-  PaperPlaneIcon,
-  CommentDotsIcon,
-  CircleUserIcon,
-} from '@shared/components/Icons';
+import { Icon, IconType } from '@shared/components/Icons';
 import GroupMeetingStack from '@navigation/GroupMeetingStack';
 import { sizeConverter } from '@shared/constants/designSystem';
 import { BottomTabParamList } from '@navigation/types';
@@ -23,25 +18,25 @@ const options: Record<string, BottomTabNavigationOptions> = {
   [ScreenNames.GROUP_MEETING_STACK]: {
     tabBarLabel: '홈',
     tabBarIcon: ({ color, size }) => {
-      return <HouseIcon color={color} size={size} />;
+      return <Icon type={IconType.House} color={color} size={size} />;
     },
   },
   [ScreenNames.MOMENTS]: {
     tabBarLabel: '모멘츠',
     tabBarIcon: ({ color, size }) => {
-      return <PaperPlaneIcon color={color} size={size} />;
+      return <Icon type={IconType.PaperPlane} color={color} size={size} />;
     },
   },
   [ScreenNames.CHAT]: {
     tabBarLabel: '채팅',
     tabBarIcon: ({ color, size }) => {
-      return <CommentDotsIcon color={color} size={size} />;
+      return <Icon type={IconType.CommentDots} color={color} size={size} />;
     },
   },
   [ScreenNames.MY_PROFILE]: {
     tabBarLabel: '내 프로필',
     tabBarIcon: ({ color, size }) => {
-      return <CircleUserIcon color={color} size={size} />;
+      return <Icon type={IconType.CircleUser} color={color} size={size} />;
     },
   },
   TabNavigator: {

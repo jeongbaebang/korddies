@@ -39,46 +39,6 @@ const iconMap: Record<IconType, React.ReactElement> = {
   [IconType.ChevronLeft]: <FontAwesomeIcon icon={faChevronLeft} />,
 };
 
-export const HouseIcon = (props: IconProps) => {
-  return <Icon type={IconType.House} {...props} />;
-};
-
-export const SearchIcon = (props: IconProps) => {
-  return <Icon type={IconType.Search} {...props} />;
-};
-
-export const PlusIcon = (props: IconProps) => {
-  return <Icon type={IconType.Plus} {...props} />;
-};
-
-export const CirclePlusIcon = (props: IconProps) => {
-  return <Icon type={IconType.CirclePlus} {...props} />;
-};
-
-export const ClockIcon = (props: IconProps) => {
-  return <Icon type={IconType.Clock} {...props} />;
-};
-
-export const UserGroupIcon = (props: IconProps) => {
-  return <Icon type={IconType.UserGroup} {...props} />;
-};
-
-export const PaperPlaneIcon = (props: IconProps) => {
-  return <Icon type={IconType.PaperPlane} {...props} />;
-};
-
-export const CommentDotsIcon = (props: IconProps) => {
-  return <Icon type={IconType.CommentDots} {...props} />;
-};
-
-export const CircleUserIcon = (props: IconProps) => {
-  return <Icon type={IconType.CircleUser} {...props} />;
-};
-
-export const ChevronLeftIcon = (props: IconProps) => {
-  return <Icon type={IconType.ChevronLeft} {...props} />;
-};
-
 type DynamicIconProps = IconProps & {
   type: IconType;
 };
