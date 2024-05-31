@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Component from './CardButton';
 
-const StoryComponent: Meta<typeof Component> = {
+const meta: Meta<typeof Component> = {
   title: 'shared/components/buttons/CardButton',
   component: Component,
 
@@ -22,6 +22,6 @@ const StoryComponent: Meta<typeof Component> = {
   },
 };
 
-export default StoryComponent;
+export default meta;
 
 export const Basic: StoryObj<typeof Component> = {};

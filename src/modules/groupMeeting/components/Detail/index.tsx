@@ -4,4 +4,7 @@ export {
   type DetailInfoCardProps,
 } from './DetailInfoCard';
 export { default as DetailPeopleList } from './DetailPeopleList';
-export { default as DetailPeopleItem } from './DetailPeopleItem';
+export {
+  default as DetailPeopleItem,
+  type DetailPeopleItemProps,
+} from './DetailPeopleItem';

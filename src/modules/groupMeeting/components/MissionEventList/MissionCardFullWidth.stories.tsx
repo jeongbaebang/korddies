@@ -6,12 +6,12 @@ import {
   missionCardItemMap,
 } from '@modules/groupMeeting/assets/content/missionEventItems';
 
-const StoryComponent: Meta<typeof MissionCardFullWidth> = {
+const meta: Meta<typeof MissionCardFullWidth> = {
   title: 'modules/groupMeeting/missionEvent/MissionCard',
   component: MissionCardFullWidth,
 };
 
-export default StoryComponent;
+export default meta;
 
 export const CardType03: StoryObj<typeof MissionCardFullWidth> = {
   args: missionCardItemMap[MissionCardType.KYUNGBOK],

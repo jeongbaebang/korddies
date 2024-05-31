@@ -9,12 +9,12 @@ import {
   myMeetingCardType05,
 } from '@modules/groupMeeting/mock/myMeetingCardItems';
 
-const StoryComponent: Meta<typeof Component> = {
+const meta: Meta<typeof Component> = {
   title: 'modules/groupMeeting/screen/MyMeetingsSection',
   component: Component,
 };
 
-export default StoryComponent;
+export default meta;
 
 export const Basic: StoryObj<typeof Component> = {
   args: {

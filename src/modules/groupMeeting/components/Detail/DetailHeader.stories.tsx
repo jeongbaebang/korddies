@@ -2,12 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import Component from './DetailHeader';
 
-const StoryComponent: Meta<typeof Component> = {
+const meta: Meta<typeof Component> = {
   title: 'modules/groupMeeting/detail/DetailHeader',
   component: Component,
 };
 
-export default StoryComponent;
+export default meta;
 
 export const Basic: StoryObj<typeof Component> = {
   args: {

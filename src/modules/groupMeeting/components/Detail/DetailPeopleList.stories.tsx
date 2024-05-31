@@ -1,16 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Component from './DetailPeopleList';
+import { detailPeopleItems } from '@modules/groupMeeting/mock/detailPeopleItem';
 
-const StoryComponent: Meta<typeof Component> = {
+const meta = {
   title: 'modules/groupMeeting/detail/DetailPeopleList',
   component: Component,
-};
+} satisfies Meta<typeof Component>;
 
-export default StoryComponent;
+export default meta;
 
-export const Basic: StoryObj<typeof Component> = {
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
   args: {
-    users: '5 People',
+    data: detailPeopleItems,
   },
 };

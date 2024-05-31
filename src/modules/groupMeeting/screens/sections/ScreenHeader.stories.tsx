@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Component, { GroupMeetingDetailScreenHeader } from './ScreenHeader';
 import { cardImage01 } from '@modules/groupMeeting/mock/myMeetingCardItems';
 
-const StoryComponent: Meta<typeof Component> = {
+const meta: Meta<typeof Component> = {
   title: 'modules/groupMeeting/screen/Header',
   component: Component,
   parameters: {
@@ -14,7 +14,7 @@ const StoryComponent: Meta<typeof Component> = {
   },
 };
 
-export default StoryComponent;
+export default meta;
 
 export const Basic: StoryObj<typeof Component> = {};
 

@@ -3,13 +3,13 @@ import React from 'react';
 import { WithIcon, WithIconStyle } from '@shared/components/Text';
 import { sizeConverter } from '@shared/constants/designSystem';
 import { IconType } from '@shared/components/Icons';
-import DetailPeopleItem from './DetailPeopleItem';
+import DetailPeopleItem, { DetailPeopleItemProps } from './DetailPeopleItem';
 
 type Props = {
-  users: string;
+  data: DetailPeopleItemProps[];
 };
 
-const DetailPeopleList: React.FC<Props> = (props) => {
+const DetailPeopleList: React.FC<Props> = ({ data = [] }) => {
   const { border, withIconStyle } = {
     border: {
       borderColor: '#EAEAEA',
@@ -26,6 +26,7 @@ const DetailPeopleList: React.FC<Props> = (props) => {
       },
     } as WithIconStyle,
   };
+  const users = `${data.length} People`;
 
   return (
     <View style={styles.outerContainer}>
@@ -35,14 +36,12 @@ const DetailPeopleList: React.FC<Props> = (props) => {
             <WithIcon
               style={withIconStyle}
               iconType={IconType.CircleUser}
-              contentText={props.users}
+              contentText={users}
             />
           </View>
-          <DetailPeopleItem
-            nickname="Adina"
-            status="You"
-            uri="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
-          />
+          {data.map((item, index) => (
+            <DetailPeopleItem key={index} {...item} />
+          ))}
         </View>
       </View>
     </View>

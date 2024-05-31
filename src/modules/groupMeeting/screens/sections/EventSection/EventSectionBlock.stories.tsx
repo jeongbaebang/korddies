@@ -7,12 +7,12 @@ import {
   missionCardHeaderTitleMap,
 } from '@modules/groupMeeting/assets/content/missionEventItems';
 
-const StoryComponent: Meta<typeof Component> = {
+const meta: Meta<typeof Component> = {
   title: 'modules/groupMeeting/screen/EventSectionBlock',
   component: Component,
 };
 
-export default StoryComponent;
+export default meta;
 
 export const Basic: StoryObj<typeof Component> = {
   args: {
