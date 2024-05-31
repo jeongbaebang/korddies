@@ -23,7 +23,7 @@ const GroupMeetingEventDetailScreen: React.FC<Props> = ({
   return (
     <View style={styles.container}>
       <ScreenHeader canGoBack onBackPress={onBackPressHandler} />
-      <ScrollView style={styles.container}>
+      <ScrollView>
         <EventDetailSection type={route.params.cardType} />
         <MeetingListSection />
       </ScrollView>

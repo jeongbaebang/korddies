@@ -18,7 +18,7 @@ export default DetailHeader;
 
 const styles = StyleSheet.create({
   container: {
-    height: sizeConverter(121),
+    height: sizeConverter(130),
   },
   image: {
     height: '100%',

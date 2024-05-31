@@ -195,3 +195,4 @@ const styles = StyleSheet.create({
 });
 
 export default DetailInfoCard;
+export type { Props as DetailInfoCardProps };

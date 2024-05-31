@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import Component, { GroupMeetingDetailScreenHeader } from './ScreenHeader';
+import { cardImage01 } from '@modules/groupMeeting/mock/myMeetingCardItems';
 
 const StoryComponent: Meta<typeof Component> = {
   title: 'modules/groupMeeting/screen/Header',
@@ -20,7 +21,7 @@ export const Basic: StoryObj<typeof Component> = {};
 export const DetailScreenHeader: StoryObj<typeof Component> = {
   decorators: [
     () => {
-      return <GroupMeetingDetailScreenHeader />;
+      return <GroupMeetingDetailScreenHeader imageURI={cardImage01} />;
     },
   ],
 };

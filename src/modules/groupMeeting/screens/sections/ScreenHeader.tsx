@@ -1,5 +1,5 @@
 import React, { PropsWithChildren } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ImageBackground } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import {
@@ -28,19 +28,37 @@ const ScreenHeader: React.FC<HeaderProps> = ({ canGoBack, onBackPress }) => {
   );
 };
 
-const DetailScreenHeader: React.FC<HeaderProps> = ({ onBackPress }) => {
-  return (
-    <ScreenHeaderLayout>
-      <LeftActionButton onPress={onBackPress} />
-    </ScreenHeaderLayout>
-  );
-};
-
-const ScreenHeaderLayout: React.FC<PropsWithChildren> = ({ children }) => {
+const DetailScreenHeader: React.FC<HeaderProps & { imageURI: string }> = ({
+  onBackPress,
+  imageURI,
+}) => {
   const insets = useSafeAreaInsets();
 
   return (
-    <View style={[{ marginTop: insets.top }, styles.outerContainer]}>
+    <ImageBackground
+      source={{
+        uri: imageURI,
+      }}
+      style={[styles.imageContainer, { marginTop: insets.top }]}
+      resizeMode="cover">
+      <ScreenHeaderLayout safeArea={false}>
+        <LeftActionButton onPress={onBackPress} />
+      </ScreenHeaderLayout>
+    </ImageBackground>
+  );
+};
+
+const ScreenHeaderLayout: React.FC<
+  PropsWithChildren & { safeArea?: boolean }
+> = ({ children, safeArea = true }) => {
+  const insets = useSafeAreaInsets();
+
+  return (
+    <View
+      style={[
+        { marginTop: safeArea ? insets.top : undefined },
+        styles.outerContainer,
+      ]}>
       <View style={styles.innerContainer}>{children}</View>
     </View>
   );
@@ -97,6 +115,9 @@ const RightActionButtons = () => {
 };
 
 const styles = StyleSheet.create({
+  imageContainer: {
+    height: sizeConverter(130),
+  },
   innerContainer: {
     alignItems: 'center',
     flexDirection: 'row',
