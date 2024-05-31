@@ -1,11 +1,12 @@
 import { StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
 
-import { Icon, IconType } from '@shared/components/Icons';
+import { IconType } from '@shared/components/Icons';
 import {
   sizeConverter,
   convertToResponsiveStyle,
 } from '@shared/constants/designSystem';
+import { WithIcon, WithIconStyle } from '@shared/components/Text';
 
 type Props = {
   leftContent: LeftContent;
@@ -98,6 +99,7 @@ const RightContent: React.FC<{ data: RightContent }> = ({ data }) => {
       },
     },
     info: {
+      gap: sizeConverter(5),
       icon: {
         size: sizeConverter(12),
         color: '#E6E6EA',
@@ -106,7 +108,7 @@ const RightContent: React.FC<{ data: RightContent }> = ({ data }) => {
         fontSize: sizeConverter(11),
         color: '#4F5E7B',
       },
-    },
+    } as WithIconStyle,
   };
 
   return (
@@ -117,23 +119,17 @@ const RightContent: React.FC<{ data: RightContent }> = ({ data }) => {
       <Text style={description.font}>{data.description}</Text>
       <View style={rightStyles.infoContainer}>
         {/* 이벤트 시간 */}
-        <View style={rightStyles.infoContent}>
-          <Icon
-            type={IconType.Clock}
-            size={info.icon.size}
-            color={info.icon.color}
-          />
-          <Text style={info.font}>{data.info.time}</Text>
-        </View>
+        <WithIcon
+          style={info}
+          contentText={data.info.time}
+          iconType={IconType.Clock}
+        />
         {/* 이벤트 인원 */}
-        <View style={rightStyles.infoContent}>
-          <Icon
-            type={IconType.UserGroup}
-            size={info.icon.size}
-            color={info.icon.color}
-          />
-          <Text style={info.font}>{data.info.peoples}</Text>
-        </View>
+        <WithIcon
+          style={info}
+          iconType={IconType.UserGroup}
+          contentText={data.info.peoples}
+        />
       </View>
     </View>
   );
@@ -177,11 +173,6 @@ const rightStyles = StyleSheet.create({
     gap: 15,
     marginTop: 3,
   }),
-  infoContent: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    gap: sizeConverter(5),
-  },
 });
 
 export default MeetingCard;
