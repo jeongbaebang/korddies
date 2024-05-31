@@ -1,13 +1,19 @@
-import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 
-import DetailSectionBlock from './DetailSectionBlock';
+import Component from './DetailSectionBlock';
 import { detailPeopleItems } from '@modules/groupMeeting/mock/detailPeopleItem';
 
-/**
- * SERVER FETCH LAYERS
- */
-const DetailSection = () => {
-  const { payload } = {
+const meta = {
+  title: 'modules/groupMeeting/screen/DetailSectionBlock',
+  component: Component,
+} satisfies Meta<typeof Component>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const Basic: Story = {
+  args: {
     payload: {
       info: {
         title: '이수 보드게임',
@@ -19,9 +25,5 @@ const DetailSection = () => {
       },
       peoples: detailPeopleItems,
     },
-  };
-
-  return <DetailSectionBlock payload={payload} />;
+  },
 };
-
-export default DetailSection;

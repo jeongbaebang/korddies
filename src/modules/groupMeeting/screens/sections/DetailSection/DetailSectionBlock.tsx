@@ -4,16 +4,24 @@ import React from 'react';
 import {
   DetailInfoCard,
   DetailInfoCardProps,
+  DetailPeopleList,
+  DetailPeopleItemProps,
 } from '@modules/groupMeeting/components/Detail';
 
 type Props = {
-  payload: DetailInfoCardProps;
+  payload: {
+    info: DetailInfoCardProps;
+    peoples: DetailPeopleItemProps[];
+  };
 };
 
-const DetailSectionBlock: React.FC<Props> = ({ payload }) => {
+const DetailSectionBlock: React.FC<Props> = ({
+  payload: { info, peoples },
+}) => {
   return (
     <View>
-      <DetailInfoCard {...payload} />
+      <DetailInfoCard {...info} />
+      <DetailPeopleList data={peoples} />
     </View>
   );
 };

@@ -10,7 +10,10 @@ type Props = {
 };
 
 const DetailPeopleList: React.FC<Props> = ({ data = [] }) => {
-  const { border, withIconStyle } = {
+  const { border, withIconStyle, innerStyle } = {
+    innerStyle: {
+      backgroundColor: '#FFFFFF',
+    },
     border: {
       borderColor: '#EAEAEA',
     },
@@ -30,7 +33,7 @@ const DetailPeopleList: React.FC<Props> = ({ data = [] }) => {
 
   return (
     <View style={styles.outerContainer}>
-      <View style={styles.innerContainer}>
+      <View style={[styles.innerContainer, innerStyle]}>
         <View style={styles.contentContainer}>
           <View style={[styles.peopleContainer, border]}>
             <WithIcon
