@@ -1,4 +1,3 @@
-/* eslint-disable react-native/no-color-literals */
 import { StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
 import { IconType } from '@shared/components/Icons';
@@ -145,7 +144,6 @@ const Description: React.FC<{ text: string }> = ({ text }) => {
 const styles = StyleSheet.create({
   addressContainer: {
     alignItems: 'center',
-    backgroundColor: 'pink',
     flexDirection: 'row',
   },
   contentContainer: {
