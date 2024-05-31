@@ -97,6 +97,7 @@ const Information: React.FC<InformationProps> = ({ time, users, address }) => {
       <View style={styles.addressContainer}>
         {/* 모임 정보 */}
         <WithIcon
+          fullWidth
           style={withIconStyle}
           contentText={address}
           iconType={IconType.LocationDot}
@@ -146,7 +147,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'pink',
     flexDirection: 'row',
-    marginRight: sizeConverter(5),
   },
   contentContainer: {
     gap: 20,

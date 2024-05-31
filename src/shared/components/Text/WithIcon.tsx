@@ -19,18 +19,20 @@ type Props = {
   style: Style;
   iconType: IconType;
   contentText: string;
+  fullWidth?: boolean;
 };
 
 const WithIcon: React.FC<Props> = ({
   style: { gap, icon, font },
   contentText,
   iconType,
+  fullWidth,
 }) => {
   return (
     <View
       style={[styles.container, { gap, minHeight: sizeConverter(icon.size) }]}>
       <Icon {...icon} type={iconType} />
-      <Text style={font}>{contentText}</Text>
+      <Text style={[fullWidth && styles.fullWidth, font]}>{contentText}</Text>
     </View>
   );
 };
@@ -39,6 +41,9 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     flexDirection: 'row',
+  },
+  fullWidth: {
+    flex: 1,
   },
 });
 
