@@ -13,9 +13,15 @@ type Props = {
 };
 
 const DetailInfoCard: React.FC<Props> = (payload) => {
+  const { color } = {
+    color: {
+      backgroundColor: '#FFFFFF',
+    },
+  };
+
   return (
     <View style={styles.outerContainer}>
-      <View style={styles.innerContainer}>
+      <View style={[styles.innerContainer, color]}>
         <TitleContent text={payload.title} />
         <View style={styles.contentContainer}>
           {/* 시간, 인원수 */}

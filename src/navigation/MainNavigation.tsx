@@ -28,7 +28,7 @@ const navigationTheme: { [Key in 'dark' | 'light']: Theme } = {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      background: 'rgb(253, 253, 253)',
+      background: 'rgb(246, 246, 246)',
     },
   },
 };
