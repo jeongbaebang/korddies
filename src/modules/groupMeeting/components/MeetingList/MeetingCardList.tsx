@@ -8,14 +8,14 @@ type Props = {
 };
 
 const MeetingCardList: React.FC<Props> = (props) => {
-  const { container } = {
-    container: {
+  const { color } = {
+    color: {
       backgroundColor: '#ffffff',
     },
   };
 
   return (
-    <View style={container}>
+    <View style={color}>
       {props.data.map((item, index) => {
         return (
           <MeetingCard
