@@ -7,6 +7,8 @@ import {
   convertToResponsiveStyle,
 } from '@shared/constants/designSystem';
 import { WithIcon, WithIconStyle } from '@shared/components/Text';
+import Link from '@shared/components/Link';
+import { ScreenNames } from '@navigation/screenNames';
 
 type Props = {
   leftContent: LeftContent;
@@ -135,6 +137,15 @@ const RightContent: React.FC<{ data: RightContent }> = ({ data }) => {
   );
 };
 
+const LinkMeetingCard = (props: Props) => {
+  const LinkToMeetingDetailScreen = Link(
+    MeetingCard,
+    ScreenNames.GROUP_MEETING_DETAIL,
+  );
+
+  return <LinkToMeetingDetailScreen {...props} />;
+};
+
 const styles = StyleSheet.create({
   contentContainer: {
     flexDirection: 'row',
@@ -176,4 +187,4 @@ const rightStyles = StyleSheet.create({
 });
 
 export default MeetingCard;
-export type { Props as MeetingCardProps };
+export { type Props as MeetingCardProps, LinkMeetingCard };
