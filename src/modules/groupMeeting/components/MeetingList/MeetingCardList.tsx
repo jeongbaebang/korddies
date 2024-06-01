@@ -1,13 +1,14 @@
 import { View } from 'react-native';
-import React from 'react';
+import React, { ComponentType } from 'react';
 
-import MeetingCard, { MeetingCardProps } from './MeetingCard';
+import { MeetingCardProps } from './MeetingCard';
 
 type Props = {
   data: MeetingCardProps[];
+  CardItem: ComponentType<MeetingCardProps>;
 };
 
-const MeetingCardList: React.FC<Props> = (props) => {
+const MeetingCardList: React.FC<Props> = ({ CardItem, data }) => {
   const { color } = {
     color: {
       backgroundColor: '#ffffff',
@@ -16,14 +17,8 @@ const MeetingCardList: React.FC<Props> = (props) => {
 
   return (
     <View style={color}>
-      {props.data.map((item, index) => {
-        return (
-          <MeetingCard
-            key={index}
-            leftContent={item.leftContent}
-            rightContent={item.rightContent}
-          />
-        );
+      {data.map((item, index) => {
+        return <CardItem key={index} {...item} />;
       })}
     </View>
   );

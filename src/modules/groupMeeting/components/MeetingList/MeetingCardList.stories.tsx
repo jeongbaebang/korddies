@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import MeetingCardList from './MeetingCardList';
 import { mockMeetingCard } from '@modules/groupMeeting/mock/meetingCardItems';
+import MeetingCard from './MeetingCard';
 
 const meta: Meta<typeof MeetingCardList> = {
   title: 'modules/groupMeeting/meeting/MeetingCardList',
@@ -21,5 +22,6 @@ export const Basic: StoryObj<typeof MeetingCardList> = {
       mockMeetingCard,
       mockMeetingCard,
     ],
+    CardItem: MeetingCard,
   },
 };

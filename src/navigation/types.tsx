@@ -11,16 +11,12 @@ import type { MissionCardNames } from '@modules/groupMeeting/assets/content/miss
 // RootStackParamList 정의
 export type RootStackParamList = {
   [ScreenNames.WITH_BOTTOM_TABS]: NavigatorScreenParams<BottomTabParamList>;
+  [ScreenNames.GROUP_MEETING_DETAIL]: undefined;
 };
-
-// RootStackScreenProps 정의
-export type RootStackScreenProps<T extends keyof RootStackParamList> =
-  NativeStackScreenProps<RootStackParamList, T>;
 
 // GroupMeetingStackParamList 정의
 export type GroupMeetingStackParamList = {
   [ScreenNames.GROUP_MEETING]: undefined;
-  [ScreenNames.GROUP_MEETING_DETAIL]: undefined;
   [ScreenNames.GROUP_MEETING_EVENT_DETAIL]: {
     cardType: MissionCardNames;
   };
@@ -33,6 +29,10 @@ export type BottomTabParamList = {
   [ScreenNames.CHAT]: undefined;
   [ScreenNames.MY_PROFILE]: undefined;
 };
+
+// RootStackScreenProps 정의
+export type RootStackScreenProps<T extends keyof RootStackParamList> =
+  NativeStackScreenProps<RootStackParamList, T>;
 
 // HomeTabScreenProps 정의
 export type HomeTabScreenProps<T extends keyof BottomTabParamList> =

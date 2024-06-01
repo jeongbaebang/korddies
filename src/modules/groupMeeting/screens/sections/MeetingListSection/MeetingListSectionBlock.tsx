@@ -8,12 +8,13 @@ import {
 
 type Props = {
   payload: MeetingCardProps[];
+  RenderItem: (props: MeetingCardProps) => React.JSX.Element;
 };
 
-const MeetingListSectionBlock: React.FC<Props> = (props) => {
+const MeetingListSectionBlock: React.FC<Props> = ({ payload, RenderItem }) => {
   return (
     <View>
-      <MeetingCardList data={props.payload} />
+      <MeetingCardList data={payload} CardItem={RenderItem} />
     </View>
   );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 
 import { mockMeetingCard } from '@modules/groupMeeting/mock/meetingCardItems';
 import { MeetingListSectionBlock } from './MeetingListSectionBlock';
+import { LinkMeetingCard } from '@modules/groupMeeting/components/MeetingList/MeetingCard';
 
 /**
  * SERVER FETCH LAYERS
@@ -19,7 +20,9 @@ const MeetingListSection = () => {
     ],
   };
 
-  return <MeetingListSectionBlock payload={payload} />;
+  return (
+    <MeetingListSectionBlock payload={payload} RenderItem={LinkMeetingCard} />
+  );
 };
 
 export default MeetingListSection;

@@ -12,6 +12,7 @@ import type { NativeStackNavigationOptions } from '@react-navigation/native-stac
 import { ScreenNames } from '@navigation/screenNames';
 import BottomTabs from '@navigation/BottomTabs';
 import type { RootStackParamList } from './types';
+import GroupMeetingDetailScreen from '@modules/groupMeeting/screens/GroupMeetingDetailScreen';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -37,6 +38,9 @@ const options: Record<string, NativeStackNavigationOptions> = {
   [ScreenNames.WITH_BOTTOM_TABS]: {
     headerShown: false,
   },
+  [ScreenNames.GROUP_MEETING_DETAIL]: {
+    headerShown: false,
+  },
 };
 const MainNavigation = () => {
   const scheme = useColorScheme();
@@ -49,6 +53,11 @@ const MainNavigation = () => {
           name={ScreenNames.WITH_BOTTOM_TABS}
           component={BottomTabs}
           options={options[ScreenNames.WITH_BOTTOM_TABS]}
+        />
+        <Stack.Screen
+          name={ScreenNames.GROUP_MEETING_DETAIL}
+          component={GroupMeetingDetailScreen}
+          options={options[ScreenNames.GROUP_MEETING_DETAIL]}
         />
       </Stack.Navigator>
     </NavigationContainer>

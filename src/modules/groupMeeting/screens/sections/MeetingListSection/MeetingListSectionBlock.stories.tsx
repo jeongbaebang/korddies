@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { MeetingListSectionBlock as Component } from './MeetingListSectionBlock';
 import { mockMeetingCard } from '@modules/groupMeeting/mock/meetingCardItems';
+import { MeetingCard } from '@modules/groupMeeting/components/MeetingList';
 
 const meta: Meta<typeof Component> = {
   title: 'modules/groupMeeting/screen/MeetingListSectionBlock',
@@ -21,5 +22,6 @@ export const Basic: StoryObj<typeof Component> = {
       mockMeetingCard,
       mockMeetingCard,
     ],
+    RenderItem: (item) => <MeetingCard {...item} />,
   },
 };
