@@ -4,7 +4,7 @@ import { Icon, IconType } from '@shared/components/Icons';
 import { sizeConverter } from '@shared/constants/designSystem';
 
 const SearchBox = () => {
-  const { innerStyle, icon } = {
+  const { innerStyle, icon, input } = {
     innerStyle: {
       backgroundColor: '#ffffff',
       shadowColor: '#000',
@@ -12,6 +12,11 @@ const SearchBox = () => {
     icon: {
       type: IconType.Search,
       size: sizeConverter(20),
+      color: '#8D97B0',
+    },
+    input: {
+      fontSize: 15,
+      color: '#8D97B0',
     },
   };
 
@@ -19,8 +24,8 @@ const SearchBox = () => {
     <View style={styles.outerContainer}>
       <View style={[styles.innerContainer, innerStyle]}>
         <View style={styles.contentContainer}>
-          <Icon type={icon.type} size={icon.size} />
-          <TextInput style={styles.input} />
+          <Icon {...icon} />
+          <TextInput style={[styles.input, input]} />
         </View>
       </View>
     </View>
@@ -51,6 +56,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
+
     height: '100%',
   },
   outerContainer: {
