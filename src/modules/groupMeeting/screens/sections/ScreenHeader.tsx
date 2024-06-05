@@ -11,6 +11,7 @@ import {
   ActionButtonProps,
   ActionIconButton,
 } from '@shared/components/Buttons';
+import SearchActionButton from '@modules/groupMeeting/components/Search/SearchModal';
 
 type OnBackPress = () => void;
 type HeaderProps = {
@@ -108,7 +109,7 @@ const RightActionButtons = () => {
 
   return (
     <View style={styles.rightActionContainer}>
-      <ActionIconButton type={IconType.Search} {...options} />
+      <SearchActionButton />
       <ActionIconButton type={IconType.CirclePlus} {...options} />
     </View>
   );

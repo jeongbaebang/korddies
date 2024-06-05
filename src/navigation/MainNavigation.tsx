@@ -22,14 +22,14 @@ const navigationTheme: { [Key in 'dark' | 'light']: Theme } = {
     ...DarkTheme,
     colors: {
       ...DarkTheme.colors,
-      background: 'pink',
+      background: '#2A2C38',
     },
   },
   light: {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      background: 'rgb(246, 246, 246)',
+      background: '#F6F6F6',
     },
   },
 };

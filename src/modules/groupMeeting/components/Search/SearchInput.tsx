@@ -1,10 +1,15 @@
 import { StyleSheet, TextInput, View } from 'react-native';
-import React from 'react';
+import React, { Ref } from 'react';
 import { Icon, IconType } from '@shared/components/Icons';
-import { sizeConverter } from '@shared/constants/designSystem';
+import {
+  sizeConverter,
+  convertToResponsiveStyle,
+} from '@shared/constants/designSystem';
 
-const SearchBox = () => {
-  const { innerStyle, icon, input } = {
+type Props = {};
+
+const SearchInput = (_props: Props, ref: Ref<TextInput>) => {
+  const options = {
     innerStyle: {
       backgroundColor: '#ffffff',
       shadowColor: '#000',
@@ -15,36 +20,44 @@ const SearchBox = () => {
       color: '#8D97B0',
     },
     input: {
-      fontSize: 15,
-      color: '#8D97B0',
+      style: {
+        fontSize: 15,
+        color: '#8D97B0',
+      },
+      placeholder: '제목을 검색해주세요 (ex. 보드게임)',
     },
   };
 
   return (
     <View style={styles.outerContainer}>
-      <View style={[styles.innerContainer, innerStyle]}>
+      <View style={[styles.innerContainer, options.innerStyle]}>
         <View style={styles.contentContainer}>
-          <Icon {...icon} />
-          <TextInput style={[styles.input, input]} />
+          <Icon {...options.icon} />
+          <TextInput
+            ref={ref}
+            placeholder={options.input.placeholder}
+            style={[styles.input, options.input.style]}
+            clearButtonMode="always"
+          />
         </View>
       </View>
     </View>
   );
 };
 
-export default SearchBox;
+export default React.forwardRef<TextInput>(SearchInput);
 
 const styles = StyleSheet.create({
-  contentContainer: {
+  contentContainer: convertToResponsiveStyle({
     alignItems: 'center',
     flexDirection: 'row',
     gap: 10,
     marginHorizontal: 20,
     marginVertical: 13,
     overflow: 'hidden',
-  },
+  }),
   innerContainer: {
-    borderRadius: 56,
+    borderRadius: sizeConverter(56),
     elevation: 10,
     minHeight: 45,
     shadowOffset: {
@@ -56,11 +69,10 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-
     height: '100%',
   },
-  outerContainer: {
+  outerContainer: convertToResponsiveStyle({
     minHeight: 45,
     paddingHorizontal: 20,
-  },
+  }),
 });
