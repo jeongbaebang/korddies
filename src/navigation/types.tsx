@@ -12,6 +12,7 @@ import type { MissionCardNames } from '@modules/groupMeeting/assets/content/miss
 export type RootStackParamList = {
   [ScreenNames.WITH_BOTTOM_TABS]: NavigatorScreenParams<BottomTabParamList>;
   [ScreenNames.GROUP_MEETING_DETAIL]: undefined;
+  [ScreenNames.GROUP_MEETING_DETAIL_CHAT]: undefined;
 };
 
 // GroupMeetingStackParamList 정의
