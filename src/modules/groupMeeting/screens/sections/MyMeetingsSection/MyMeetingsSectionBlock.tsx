@@ -27,4 +27,4 @@ const MyMeetingsSectionBlock: React.FC<Props> = ({ headerTitle, payload }) => {
   );
 };
 
-export { MyMeetingsSectionBlock };
+export default MyMeetingsSectionBlock;

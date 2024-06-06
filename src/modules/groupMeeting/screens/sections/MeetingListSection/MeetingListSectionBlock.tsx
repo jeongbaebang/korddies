@@ -19,4 +19,4 @@ const MeetingListSectionBlock: React.FC<Props> = ({ payload, RenderItem }) => {
   );
 };
 
-export { MeetingListSectionBlock };
+export default MeetingListSectionBlock;

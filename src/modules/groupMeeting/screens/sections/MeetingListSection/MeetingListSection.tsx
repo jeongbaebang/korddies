@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { mockMeetingCard } from '@modules/groupMeeting/mock/meetingCardItems';
-import { MeetingListSectionBlock } from './MeetingListSectionBlock';
+import MeetingListSectionBlock from './MeetingListSectionBlock';
 import { LinkMeetingCard } from '@modules/groupMeeting/components/MeetingList/MeetingCard';
 
 /**

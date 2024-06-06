@@ -1,2 +1,2 @@
 export { default as SearchInput } from './SearchInput';
-export { default as SearchModal } from './SearchModal';
+export { default as SearchModalButton } from './SearchModalButton';

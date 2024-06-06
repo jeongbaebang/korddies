@@ -4,25 +4,16 @@ import React from 'react';
 import { GroupMeetingStackScreenProps } from '@navigation/types';
 import { ScreenNames } from '@navigation/screenNames';
 import { EventDetailSection } from './sections/EventSection/EventSectionBlock';
-import ScreenHeader from './sections/ScreenHeader';
 import { MeetingListSection } from './sections/MeetingListSection';
+import { HeaderSection } from './sections/HeaderSection';
 
 type Props =
   GroupMeetingStackScreenProps<ScreenNames.GROUP_MEETING_EVENT_DETAIL>;
 
-const GroupMeetingEventDetailScreen: React.FC<Props> = ({
-  navigation,
-  route,
-}) => {
-  const onBackPressHandler = () => {
-    if (navigation.canGoBack()) {
-      navigation.goBack();
-    }
-  };
-
+const GroupMeetingEventDetailScreen: React.FC<Props> = ({ route }) => {
   return (
     <View style={styles.container}>
-      <ScreenHeader canGoBack onBackPress={onBackPressHandler} />
+      <HeaderSection />
       <ScrollView>
         <EventDetailSection type={route.params.cardType} />
         <MeetingListSection />

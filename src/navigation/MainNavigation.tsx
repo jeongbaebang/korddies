@@ -50,9 +50,7 @@ const MainNavigation = () => {
   return (
     <NavigationContainer
       theme={scheme === 'dark' ? navigationTheme.dark : navigationTheme.light}>
-      <Stack.Navigator
-        screenOptions={options.StackNavigator}
-        initialRouteName={ScreenNames.GROUP_MEETING_DETAIL_CHAT}>
+      <Stack.Navigator screenOptions={options.StackNavigator}>
         <Stack.Screen
           name={ScreenNames.WITH_BOTTOM_TABS}
           component={BottomTabs}

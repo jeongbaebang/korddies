@@ -1,12 +1,13 @@
 import { Modal, Pressable, StyleSheet, TextInput, View } from 'react-native';
 import React, { useRef, useState } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+
 import { ActionIconButton } from '@shared/components/Buttons';
 import { IconType } from '@shared/components/Icons';
 import { sizeConverter } from '@shared/constants/designSystem';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import SearchInput from './SearchInput';
 
-const SearchModal = () => {
+const SearchModalButton = () => {
   const inputRef = useRef<TextInput>(null);
   const [modalVisible, setModalVisible] = useState(false);
   const insets = useSafeAreaInsets();
@@ -47,8 +48,6 @@ const SearchModal = () => {
   );
 };
 
-export default SearchModal;
-
 const styles = StyleSheet.create({
   contentContainer: {
     transform: [{ translateY: sizeConverter(60) }],
@@ -57,3 +56,5 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
+
+export default SearchModalButton;

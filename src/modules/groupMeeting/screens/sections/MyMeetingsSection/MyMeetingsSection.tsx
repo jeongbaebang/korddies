@@ -7,7 +7,7 @@ import {
   myMeetingCardType04,
   myMeetingCardType05,
 } from '@modules/groupMeeting/mock/myMeetingCardItems';
-import { MyMeetingsSectionBlock } from './MyMeetingsSectionBlock';
+import MyMeetingsSectionBlock from './MyMeetingsSectionBlock';
 
 /**
  * SERVER FETCH LAYERS

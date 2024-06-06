@@ -1,15 +1,15 @@
 import { StyleSheet, ScrollView, View } from 'react-native';
 import React from 'react';
 
-import ScreenHeader from './sections/ScreenHeader';
 import { EventListSection } from './sections/EventSection';
 import { MeetingListSection } from './sections/MeetingListSection';
 import { MyMeetingsSection } from './sections/MyMeetingsSection';
+import { HeaderSection } from './sections/HeaderSection';
 
 const GroupMeetingScreen = () => {
   return (
     <View style={styles.container}>
-      <ScreenHeader />
+      <HeaderSection />
       <ScrollView>
         <EventListSection />
         <MyMeetingsSection />

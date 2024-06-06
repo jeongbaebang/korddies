@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import Component from './SearchModal';
+import Component from './SearchModalButton';
 
 const meta = {
   title: 'modules/groupMeeting/search/SearchModal',

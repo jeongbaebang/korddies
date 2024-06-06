@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { MyMeetingsSectionBlock as Component } from './MyMeetingsSectionBlock';
+import Component from './MyMeetingsSectionBlock';
 import {
   myMeetingCardType01,
   myMeetingCardType02,
