@@ -21,9 +21,12 @@ type Props = {
 const ChatHeaderBlock: React.FC<Props> = ({ title, count, onBackPress }) => {
   return (
     <ScreenHeader
-      title={title}
-      titleStyle={styles.title}
-      count={isNaN(count) ? 0 : Math.abs(count)}
+      titleOptions={{
+        title: title,
+        style: styles.title,
+        align: 'center',
+        count: isNaN(count) ? 0 : Math.abs(count),
+      }}
       LeftAction={<BackActionButton onPress={onBackPress} />}
       RightAction={<NotificationIconButton />}
     />

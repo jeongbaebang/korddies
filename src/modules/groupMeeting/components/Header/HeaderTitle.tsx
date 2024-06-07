@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextStyle, View } from 'react-native';
+import { StyleSheet, Text, TextStyle, View, ViewStyle } from 'react-native';
 import React from 'react';
 import { is } from 'ramda';
 
@@ -6,11 +6,17 @@ import { sizeConverter } from '@shared/constants/designSystem';
 
 type Props = {
   title: string;
+  align?: ViewStyle['justifyContent'];
   style?: TextStyle;
   count?: number;
 };
 
-const HeaderTitle: React.FC<Props> = ({ title, style, count }) => {
+const HeaderTitle: React.FC<Props> = ({
+  title,
+  style,
+  count,
+  align = 'flex-start',
+}) => {
   const options = {
     maxLine: 5,
     title: {
@@ -24,7 +30,7 @@ const HeaderTitle: React.FC<Props> = ({ title, style, count }) => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { justifyContent: align }]}>
       <Text
         style={[styles.title, options.title, style]}
         numberOfLines={options.maxLine}>
@@ -43,7 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     gap: sizeConverter(7),
-    justifyContent: 'center',
   },
   count: {
     alignSelf: 'center',
@@ -56,3 +61,4 @@ const styles = StyleSheet.create({
 });
 
 export default HeaderTitle;
+export { type Props as HeaderTitleProps };

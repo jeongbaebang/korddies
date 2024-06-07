@@ -33,7 +33,7 @@ const HeaderBlock: React.FC<Props> = ({ title, canGoBack, onBackPress }) => {
 
   return (
     <ScreenHeader
-      title={title}
+      titleOptions={{ title }}
       LeftAction={LeftComponent}
       RightAction={RightComponent}
     />
