@@ -1,6 +1,9 @@
 import { Image, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { sizeConverter } from '@shared/constants/designSystem';
+import {
+  sizeConverter,
+  convertToResponsiveStyle,
+} from '@shared/constants/designSystem';
 
 type Props = {
   uri: string;
@@ -43,29 +46,29 @@ const DetailPeopleItem: React.FC<Props> = ({ uri, nickname, status }) => {
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    minHeight: 40,
+    minHeight: sizeConverter(40),
   },
   contentContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  userImage: {
+  userImage: convertToResponsiveStyle({
     aspectRatio: 1,
     borderRadius: 13,
     width: 40,
-  },
+  }),
   userImageNicknameContainer: {
     alignItems: 'center',
     flexDirection: 'row',
     flex: 1,
-    gap: 15,
+    gap: sizeConverter(15),
   },
   userNicknameContainer: {
     flex: 1,
   },
   userStatusContainer: {
     justifyContent: 'center',
-    paddingHorizontal: 13,
+    paddingHorizontal: sizeConverter(13),
   },
 });
 

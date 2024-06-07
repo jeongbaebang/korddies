@@ -12,7 +12,10 @@ const sizeConverter = generateResponsiveStyle(
   currentDeviceWidth,
   referenceDeviceWidth,
 );
-const convertToResponsiveStyle = responsiveStyleAdapter(sizeConverter);
+const convertToResponsiveStyle = responsiveStyleAdapter(sizeConverter, [
+  'flex',
+  'aspectRatio',
+]);
 
 const theme = {
   color: {

@@ -9,7 +9,7 @@ import {
 
 import { convertToResponsiveStyle } from '@shared/constants/designSystem';
 
-type CardButtonProps = {
+type Props = {
   onPress: () => void;
   text: string;
   style: {
@@ -18,7 +18,7 @@ type CardButtonProps = {
   };
 };
 
-const CardButton = ({ onPress, text, style }: CardButtonProps) => {
+const CardButton: React.FC<Props> = ({ onPress, text, style }) => {
   return (
     <TouchableOpacity
       style={[styles.container, style.container]}
@@ -38,3 +38,4 @@ const styles = StyleSheet.create({
 });
 
 export default CardButton;
+export { type Props as CardButtonProps };

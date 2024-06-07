@@ -1,9 +1,14 @@
 import { StyleSheet, Text, TextStyle, View } from 'react-native';
 import React from 'react';
+
 import { IconType } from '@shared/components/Icons';
 import { CardButton } from '@shared/components/Buttons';
 import { WithIcon, WithIconStyle } from '@shared/components/Text';
-import { sizeConverter } from '@shared/constants/designSystem';
+import {
+  sizeConverter,
+  convertToResponsiveStyle,
+} from '@shared/constants/designSystem';
+import { CardButtonProps } from '@shared/components/Buttons/CardButton';
 
 type Props = {
   title: string;
@@ -24,7 +29,7 @@ const DetailInfoCard: React.FC<Props> = (payload) => {
   return (
     <View style={styles.outerContainer}>
       <View style={[styles.innerContainer, innerStyle]}>
-        <TitleContent text={payload.title} />
+        <TitleContent title={payload.title} />
         <View style={styles.contentContainer}>
           {/* 시간, 인원수, 주소 */}
           <Information
@@ -35,25 +40,25 @@ const DetailInfoCard: React.FC<Props> = (payload) => {
           {/* 버튼 */}
           <JoinChatButton onPress={payload.onPress} />
           {/* 메모 */}
-          <Description text={payload.description} />
+          <Description description={payload.description} />
         </View>
       </View>
     </View>
   );
 };
 
-const TitleContent: React.FC<{ text: string }> = ({ text }) => {
+const TitleContent: React.FC<Pick<Props, 'title'>> = ({ title }) => {
   const { font } = {
     font: {
       color: '#1B1A57',
-      fontSize: 18,
+      fontSize: sizeConverter(18),
       fontWeight: 'bold',
     } as TextStyle,
   };
 
   return (
     <View style={styles.titleContainer}>
-      <Text style={font}>{text}</Text>
+      <Text style={font}>{title}</Text>
     </View>
   );
 };
@@ -69,11 +74,11 @@ const Information: React.FC<InformationProps> = ({ time, users, address }) => {
     gap: sizeConverter(10),
     font: {
       color: '#4F5E7B',
-      fontSize: 15,
+      fontSize: sizeConverter(15),
     },
     icon: {
       color: '#1B1A57',
-      size: 16,
+      size: sizeConverter(16),
     },
   } as WithIconStyle;
 
@@ -106,13 +111,16 @@ const Information: React.FC<InformationProps> = ({ time, users, address }) => {
   );
 };
 
-const JoinChatButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
-  const { text, style } = {
+const JoinChatButton: React.FC<Pick<CardButtonProps, 'onPress'>> = ({
+  onPress,
+}) => {
+  const options: CardButtonProps = {
+    onPress: onPress,
     text: '채팅 참여하기',
     style: {
       font: {
         color: '#2F80ED',
-        fontSize: 15,
+        fontSize: sizeConverter(15),
       },
       container: {
         backgroundColor: '#EAF3FF',
@@ -120,23 +128,23 @@ const JoinChatButton: React.FC<{ onPress: () => void }> = ({ onPress }) => {
     },
   };
 
-  return <CardButton onPress={onPress} text={text} style={style} />;
+  return <CardButton {...options} />;
 };
 
-const Description: React.FC<{ text: string }> = ({ text }) => {
+const Description: React.FC<Pick<Props, 'description'>> = ({ description }) => {
   const { color, font } = {
     color: {
       backgroundColor: '#F9F9F9',
     },
     font: {
       color: '#4F5E7B',
-      fontSize: 15,
+      fontSize: sizeConverter(15),
     } as TextStyle,
   };
 
   return (
     <View style={[styles.descriptionContainer, color]}>
-      <Text style={font}>{text}</Text>
+      <Text style={font}>{description}</Text>
     </View>
   );
 };
@@ -147,32 +155,32 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   contentContainer: {
-    gap: 20,
+    gap: sizeConverter(20),
   },
-  descriptionContainer: {
+  descriptionContainer: convertToResponsiveStyle({
     borderRadius: 10,
     minHeight: 92,
     padding: 13,
-  },
-  innerContainer: {
+  }),
+  innerContainer: convertToResponsiveStyle({
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
     flex: 1,
     paddingBottom: 30,
     paddingHorizontal: 20,
-  },
+  }),
   outerContainer: {
-    minHeight: 320,
+    minHeight: sizeConverter(320),
   },
   timeAndUserContainer: {
     alignItems: 'center',
     flexDirection: 'row',
-    gap: 25,
+    gap: sizeConverter(25),
   },
   titleContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    minHeight: 62,
+    minHeight: sizeConverter(62),
   },
 });
 

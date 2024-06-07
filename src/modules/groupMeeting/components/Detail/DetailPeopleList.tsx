@@ -1,7 +1,11 @@
 import { StyleSheet, View } from 'react-native';
 import React from 'react';
+
 import { WithIcon, WithIconStyle } from '@shared/components/Text';
-import { sizeConverter } from '@shared/constants/designSystem';
+import {
+  sizeConverter,
+  convertToResponsiveStyle,
+} from '@shared/constants/designSystem';
 import { IconType } from '@shared/components/Icons';
 import DetailPeopleItem, { DetailPeopleItemProps } from './DetailPeopleItem';
 
@@ -54,22 +58,22 @@ const DetailPeopleList: React.FC<Props> = ({ data = [] }) => {
 export default DetailPeopleList;
 
 const styles = StyleSheet.create({
-  contentContainer: {
-    gap: sizeConverter(15),
+  contentContainer: convertToResponsiveStyle({
+    gap: 15,
     marginHorizontal: 17,
     marginVertical: 15,
     minHeight: 100,
-  },
-  innerContainer: {
+  }),
+  innerContainer: convertToResponsiveStyle({
     borderRadius: 10,
     flex: 1,
     margin: 20,
-  },
+  }),
   outerContainer: {
     flex: 1,
   },
-  peopleContainer: {
+  peopleContainer: convertToResponsiveStyle({
     borderBottomWidth: 1,
     height: 33,
-  },
+  }),
 });
