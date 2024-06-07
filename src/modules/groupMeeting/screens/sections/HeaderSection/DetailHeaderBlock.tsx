@@ -31,10 +31,11 @@ const DetailHeaderBlock: React.FC<Props> = ({ onBackPress, imageURI }) => {
   );
 };
 
-export default DetailHeaderBlock;
-
 const styles = StyleSheet.create({
   container: {
     height: sizeConverter(130),
   },
 });
+
+export default DetailHeaderBlock;
+export { type Props as DetailHeaderBlockProps };

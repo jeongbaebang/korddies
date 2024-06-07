@@ -51,3 +51,4 @@ const styles = StyleSheet.create({
 });
 
 export default ChatHeaderBlock;
+export { type Props as ChatHeaderBlockProps };

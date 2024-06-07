@@ -1,21 +1,24 @@
 import React from 'react';
-import HeaderBlock from './HeaderBlock';
+
+import HeaderBlock, { HeaderBlockProps } from './HeaderBlock';
 import { useNavigation } from '@react-navigation/native';
 
+/**
+ * SERVER FETCH LAYERS
+ */
 const HeaderSection = () => {
-  const title = 'Let’s hang out with Korddies';
-  const navigation = useNavigation();
-  const isCanGoBack = navigation.canGoBack();
-
-  const handler = () => {
-    if (isCanGoBack) {
-      navigation.goBack();
-    }
+  const { canGoBack, goBack } = useNavigation();
+  const options: HeaderBlockProps = {
+    title: 'Let’s hang out with Korddies',
+    canGoBack: canGoBack(),
+    onBackPress: () => {
+      if (canGoBack()) {
+        goBack();
+      }
+    },
   };
 
-  return (
-    <HeaderBlock title={title} canGoBack={isCanGoBack} onBackPress={handler} />
-  );
+  return <HeaderBlock {...options} />;
 };
 
 export default HeaderSection;

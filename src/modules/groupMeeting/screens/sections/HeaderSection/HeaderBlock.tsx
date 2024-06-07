@@ -41,3 +41,4 @@ const HeaderBlock: React.FC<Props> = ({ title, canGoBack, onBackPress }) => {
 };
 
 export default HeaderBlock;
+export { type Props as HeaderBlockProps };
