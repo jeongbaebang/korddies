@@ -10,7 +10,7 @@ import {
 } from '@modules/groupMeeting/mock/myMeetingCardItems';
 
 const meta: Meta<typeof Component> = {
-  title: 'modules/groupMeeting/screen/MyMeetingsSection',
+  title: 'modules/groupMeeting/screen/MyMeetingsSectionBlock',
   component: Component,
 };
 

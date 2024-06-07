@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import Component from './HeaderBlock';
 
 const meta = {
-  title: 'modules/groupMeeting/screen/GroupMeetingHeaderBlock',
+  title: 'modules/groupMeeting/screen/header/GroupMeetingHeaderBlock',
   parameters: {
     noSafeArea: true,
   },

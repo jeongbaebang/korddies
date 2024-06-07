@@ -4,7 +4,7 @@ import Component from './DetailHeaderBlock';
 import { cardImage01 } from '@modules/groupMeeting/mock/myMeetingCardItems';
 
 const meta = {
-  title: 'modules/groupMeeting/screen/DetailHeaderBlock',
+  title: 'modules/groupMeeting/screen/header/DetailHeaderBlock',
   parameters: {
     noSafeArea: true,
   },
