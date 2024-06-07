@@ -4,8 +4,8 @@ import {
   MissionCardType,
   missionCardHeaderTitleMap,
 } from '@modules/groupMeeting/assets/content/missionEventItems';
-import { LinkMissionCard } from '@modules/groupMeeting/components/MissionEventList/MissionCard';
 import { EventSectionBlock } from './EventSectionBlock';
+import { LinkMissionCard } from '@modules/groupMeeting/components/MissionEventList';
 
 const EventListSection = () => {
   return (
