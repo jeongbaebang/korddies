@@ -18,12 +18,11 @@ const Link = <P, L extends keyof AllParamList>(
     const navigation = useNavigation<NavigationProp<AllParamList>>();
 
     const navigateToScreen = () => {
-      // @ts-ignore
-      navigation.navigate(link, screenParams);
+      navigation.navigate(link as any, screenParams);
     };
 
     return (
-      <Pressable onPress={navigateToScreen} testID="TestID_Link">
+      <Pressable onPress={navigateToScreen}>
         <Component {...props} />
       </Pressable>
     );
