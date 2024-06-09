@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   innerContainer: {
     borderRadius: sizeConverter(56),
     elevation: 10,
-    minHeight: 45,
+    minHeight: sizeConverter(45),
     shadowOffset: {
       width: 0,
       height: 5,
