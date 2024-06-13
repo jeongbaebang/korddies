@@ -4,9 +4,9 @@ import {
   generateResponsiveStyle,
   responsiveStyleAdapter,
 } from '@shared/utils/generateResponsiveStyle';
+import { calculateMaxChars } from '@shared/utils/calculateMaxChars';
 
 const currentDeviceWidth = Dimensions.get('window').width;
-
 const referenceDeviceWidth = 393; // iPhone 15
 const sizeConverter = generateResponsiveStyle(
   currentDeviceWidth,
@@ -16,6 +16,9 @@ const convertToResponsiveStyle = responsiveStyleAdapter(sizeConverter, [
   'flex',
   'aspectRatio',
 ]);
+const MAX_CHARS = calculateMaxChars(referenceDeviceWidth, currentDeviceWidth, {
+  baseCharCount: 40, // 글자 최대 길이
+});
 
 const theme = {
   color: {
@@ -37,4 +40,4 @@ const theme = {
   },
 } as const;
 
-export { sizeConverter, convertToResponsiveStyle, theme };
+export { sizeConverter, convertToResponsiveStyle, theme, MAX_CHARS };
